@@ -1,0 +1,30 @@
+
+.. _mpl_plot_dist:
+
+
+Dist Plot
+=========
+
+
+
+**API documentation:** :func:`~arviz.plot_dist`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_dist.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_dist.py]<matplotlib/mpl_plot_dist.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_dist.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_dist.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_dist.py]<bokeh/bokeh_plot_dist.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_dist.py
+        :lines: 7-

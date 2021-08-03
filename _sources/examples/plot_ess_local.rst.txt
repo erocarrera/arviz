@@ -1,0 +1,30 @@
+
+.. _mpl_plot_ess_local:
+
+
+ESS Local Plot
+==============
+
+
+
+**API documentation:** :func:`~arviz.plot_ess`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_ess_local.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_ess_local.py]<matplotlib/mpl_plot_ess_local.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_ess_local.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_ess_local.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_ess_local.py]<bokeh/bokeh_plot_ess_local.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_ess_local.py
+        :lines: 7-

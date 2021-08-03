@@ -1,0 +1,20 @@
+
+.. _mpl_plot_trace_circ:
+
+
+Traceplot circular variables
+============================
+
+
+
+**API documentation:** :func:`~arviz.plot_trace`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_trace_circ.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_trace_circ.py]<matplotlib/mpl_plot_trace_circ.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_trace_circ.py
+        :lines: 7-
+

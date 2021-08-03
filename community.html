@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community &#8212; ArviZ dev documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing to ArviZ" href="contributing/index.html" />
+    <link rel="prev" title="arviz.reloo" href="api/generated/arviz.reloo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Community
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#participate-online">
+     Participate online
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gitter">
+       Gitter
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#affine-forums">
+       Affine forums
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conferences">
+     Conferences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bayesian-python-ecosystem">
+   The Bayesian Python ecosystem
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#community-educational-resources">
+   Community educational resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#books">
+     Books
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podcasts">
+     Podcasts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#blogs-and-example-compilations">
+     Blogs and example compilations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="community">
+<h1>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h1>
+<p>ArviZ is a community-driven open source project committed to host an open,
+inclusive and positive community. Read the
+<a class="reference external" href="https://github.com/arviz-devs/arviz/blob/main/CODE_OF_CONDUCT.md">ArviZ Code of Conduct</a>
+for guidance on how to interact with each other and make the community thrive.</p>
+<p>Our main goal is to provide backend-agnostic tools for diagnostics and visualizations of Bayesian
+inference.</p>
+<p>We do this by:</p>
+<ul class="simple">
+<li><p>Creating and maintaining the ArviZ library with functions for posterior analysis, data storage,
+sample diagnostics, model checking, and comparison.</p></li>
+<li><p>Creating social infrastructure through a welcoming and diverse community</p></li>
+<li><p>Making the right data, tools and best practices more discoverable</p></li>
+<li><p>Promoting advocacy for a culture of principled iterative modeling based on the Bayesian Workflow</p></li>
+</ul>
+<p>This page aims to gather resources related to Bayesian modeling and ArviZ from a variety of
+sources to work towards the 2nd and 3rd bullet points.
+This page covers how can someone participate of the ArviZ community (this someone could be you!),
+gives an overview of the ecosystem of Python libraries for Bayesian analysis and serves
+as a compilation for community resources around ArviZ.</p>
+<p><em>But what is the ArviZ community?</em>
+The ArviZ community is a self-identifying group composed of probabilistic programming practitioners who,
+together, contribute to the technical and social infrastructure for open and reproducible research.
+Our specific focus is on Bayesian modeling and best practices that lower the barriers to working using
+a fully fledged Bayesian modeling workflow, as opposed to a rigid toolbox approach.</p>
+<p>Community members are people who use, cite and share use cases for ArviZ,
+write posts or give talks about using ArviZ,
+participate in issues to help define the roadmap and improve the project,
+or answer questions in any of the affine forums.</p>
+<p>This page is part of the Python ArviZ library and is therefore specific to Python,
+but the ArviZ community is not restricted to Python and in fact aims to act as a bridge
+between programming languages and encourage collaboration.</p>
+<div class="section" id="participate-online">
+<h2>Participate online<a class="headerlink" href="#participate-online" title="Permalink to this headline">¶</a></h2>
+<p>There are many alternatives and channels available to interact with other ArviZ users.</p>
+<p>To begin with, you may want to follow us on Twitter! We are <a class="reference external" href="https://twitter.com/arviz_devs">&#64;arviz_devs</a>.
+It is the best way to be up to date with the latest developments and events related
+to ArviZ.</p>
+<div class="section" id="gitter">
+<h3>Gitter<a class="headerlink" href="#gitter" title="Permalink to this headline">¶</a></h3>
+<p>The chat at <a class="reference external" href="https://gitter.im/arviz-devs/community">Gitter</a> is a great space
+to ask quick questions about ArviZ and to chat with other users and contributors.
+For longer questions, the Discourse forums listed below are probably a better platform.</p>
+</div>
+<div class="section" id="affine-forums">
+<h3>Affine forums<a class="headerlink" href="#affine-forums" title="Permalink to this headline">¶</a></h3>
+<p>Many ArviZ contributors are also active in one of <a class="reference external" href="https://discourse.pymc.io/">PyMC3 Discourse</a>
+or <a class="reference external" href="https://discourse.mc-stan.org/">Stan Discourse</a> (and sometimes even in both!).</p>
+</div>
+</div>
+<div class="section" id="conferences">
+<h2>Conferences<a class="headerlink" href="#conferences" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mc-stan.org/events/">StanCon</a></p></li>
+<li><p><a class="reference external" href="https://pymcon.com">PyMCon</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-bayesian-python-ecosystem">
+<h1>The Bayesian Python ecosystem<a class="headerlink" href="#the-bayesian-python-ecosystem" title="Permalink to this headline">¶</a></h1>
+<p>In the last years, many libraries for Bayesian data analysis have been created,
+and there is a slight tendency towards more modular libraries. ArviZ plays
+an important role in this ecosystem both as the go-to library for visualization
+and diagnostics in Python for any and all PPLs and as a way to standardize and
+share the results of PPL libraries.</p>
+<p>The PPLs that integrate with ArviZ are:</p>
+<ul class="simple">
+<li><p>PyMC3</p></li>
+<li><p>Stan</p></li>
+<li><p>MCX</p></li>
+<li><p>Pyro/NumPyro</p></li>
+<li><p>PyJAGS</p></li>
+<li><p>TensorFlow Probability</p></li>
+</ul>
+<p>Moreover, there are other libraries that use ArviZ for visualization and diagnostics
+and/or that are compatible with <code class="docutils literal notranslate"><span class="pre">InfereceData</span></code> objects:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bambinos.github.io/bambi/">Bambi</a></p></li>
+<li><p><a class="reference external" href="https://corner.readthedocs.io/en/latest/">corner.py</a></p></li>
+</ul>
+</div>
+<div class="section" id="community-educational-resources">
+<h1>Community educational resources<a class="headerlink" href="#community-educational-resources" title="Permalink to this headline">¶</a></h1>
+<p>ArviZ is a transversal and backend agnostic project. One can use ArviZ with <em>any</em> PPL,
+but one has to be used in order to have some data for ArviZ to analyze.
+This makes writing detailed and complete documentation for ArviZ complicated.
+This section aims to act as a compilation of community resources related to ArviZ
+that hopefully can bridge the gap. These can be books, case studies in the documentation of
+PPLs, personal blogs…</p>
+<p>Do you know of resources about ArviZ that are not listed here? Open an issue or a PR and
+let us know!</p>
+<div class="section" id="books">
+<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Bayesian Modeling and Computation in Python: available soon</p></li>
+<li><p><a class="reference external" href="https://github.com/aloctavodia/BAP">Bayesian Analysis with Python</a></p></li>
+<li><p><a class="reference external" href="http://www.stat.columbia.edu/~gelman/book/">Bayesian Data Analysis 3</a></p></li>
+</ul>
+</div>
+<div class="section" id="podcasts">
+<h2>Podcasts<a class="headerlink" href="#podcasts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.learnbayesstats.com/">Learning Bayesian Statistics</a></p></li>
+<li><p><a class="reference external" href="https://www.pydata-podcast.com/">dats’n’stats</a></p></li>
+</ul>
+</div>
+<div class="section" id="blogs-and-example-compilations">
+<h2>Blogs and example compilations<a class="headerlink" href="#blogs-and-example-compilations" title="Permalink to this headline">¶</a></h2>
+<p>If you have a blog that has 2 or more posts tagged as “ArviZ”, you can submit
+a pull request to add your blog to this list</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top pl-5 pr-5" src="https://raw.githubusercontent.com/pymc-devs/pymc3/master/docs/logos/PyMC3.png" />
+<div class="card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-link stretched-link reference external" href="https://github.com/pymc-devs/pymc-examples"><span>PyMC3 example notebooks</span></a></p>
+<p class="card-text">Curated selection of PyMC3 guides and case studies.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text">Examples authored by PyMC3 developers and expert users.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top pl-5 pr-5" src="https://raw.githubusercontent.com/stan-dev/logos/master/logo.png" />
+<div class="card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-link stretched-link reference external" href="https://mc-stan.org/users/documentation/case-studies"><span>Stan case studies</span></a></p>
+<p class="card-text">The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text">Examples authored by Stan developers and expert users.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="_images/bambi.png" />
+<div class="card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-link stretched-link reference external" href="https://github.com/bambinos/Bambi_resources"><span>Bambi educational resources</span></a></p>
+<p class="card-text">Bambi is a high-level Bayesian model-building interface written in Python,
+designed to make it extremely easy to fit mixed-effects models.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text">Tutorials and book translations maintained by the Bambi team</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://oriolabril.github.io/oriol_unraveled/images/nb/labeled_arys.png" />
+<div class="card-body docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-link stretched-link reference external" href="https://oriolabril.github.io/oriol_unraveled/categories/#arviz"><span>Oriol unraveled</span></a></p>
+<p class="card-text">Blog mostly on statistics, diversity and open source. I also use the blog as a playground
+ground to test new pages for ArviZ docs.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text">Oriol Abril Pla is an ArviZ core contributor pursuing his PhD
+at Helsinki University</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="api/generated/arviz.reloo.html" title="previous page">arviz.reloo</a>
+    <a class='right-next' id="next-link" href="contributing/index.html" title="next page">Contributing to ArviZ</a>
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

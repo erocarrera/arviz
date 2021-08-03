@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arviz.data.datasets &#8212; ArviZ dev documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for arviz.data.datasets</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Base IO code for all datasets. Heavily influenced by scikit-learn&#39;s implementation.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+
+<span class="kn">from</span> <span class="nn">..rcparams</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="kn">from</span> <span class="nn">.io_netcdf</span> <span class="kn">import</span> <span class="n">from_netcdf</span>
+
+<span class="n">LocalFileMetadata</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;LocalFileMetadata&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">])</span>
+
+<span class="n">RemoteFileMetadata</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+    <span class="s2">&quot;RemoteFileMetadata&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;checksum&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">_DATASET_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;_datasets&quot;</span><span class="p">)</span>
+
+<span class="c1"># Models for local datasets are located at https://github.com/arviz-devs/arviz_example_data</span>
+
+<span class="n">LOCAL_DATASETS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;centered_eight&quot;</span><span class="p">:</span> <span class="n">LocalFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_DATASET_DIR</span><span class="p">,</span> <span class="s2">&quot;centered_eight.nc&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A centered parameterization of the eight schools model. Provided as an example of a</span>
+<span class="s2">model that NUTS has trouble fitting. Compare to `load_arviz_data(&quot;non_centered_eight&quot;)`.</span>
+
+<span class="s2">The eight schools model is a hierarchical model used for an analysis of the effectiveness</span>
+<span class="s2">of classes that were designed to improve students’ performance on the Scholastic Aptitude Test.</span>
+
+<span class="s2">See Bayesian Data Analysis (Gelman et. al.) for more details.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;non_centered_eight&quot;</span><span class="p">:</span> <span class="n">LocalFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_DATASET_DIR</span><span class="p">,</span> <span class="s2">&quot;non_centered_eight.nc&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A non-centered parameterization of the eight schools model. This is a hierarchical model</span>
+<span class="s2">where sampling problems may be fixed by a non-centered parametrization. Compare to</span>
+<span class="s2">`load_arviz_data(&quot;centered_eight&quot;)`.</span>
+
+<span class="s2">The eight schools model is a hierarchical model used for an analysis of the effectiveness</span>
+<span class="s2">of classes that were designed to improve students’ performance on the Scholastic Aptitude Test.</span>
+
+<span class="s2">See Bayesian Data Analysis (Gelman et. al.) for more details.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">REMOTE_DATASETS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;radon&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;radon_hierarchical.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/24067472&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;a9b2b4adf1bf9c5728e5bdc97107e69c4fc8d8b7d213e9147233b57be8b4587b&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Radon is a radioactive gas that enters homes through contact points with the ground.</span>
+<span class="s2">It is a carcinogen that is the primary cause of lung cancer in non-smokers. Radon</span>
+<span class="s2">levels vary greatly from household to household.</span>
+
+<span class="s2">This example uses an EPA study of radon levels in houses in Minnesota to construct a</span>
+<span class="s2">model with a hierarchy over households within a county. The model includes estimates</span>
+<span class="s2">(gamma) for contextual effects of the uranium per household.</span>
+
+<span class="s2">See Gelman and Hill (2006) for details on the example, or</span>
+<span class="s2">https://docs.pymc.io/notebooks/multilevel_modeling.html</span>
+<span class="s2">by Chris Fonnesbeck for details on this implementation.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;rugby&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;rugby.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/16254359&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;9eecd2c6317e45b0388dd97ae6326adecf94128b5a7d15a52c9fcfac0937e2a6&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The Six Nations Championship is a yearly rugby competition between Italy, Ireland,</span>
+<span class="s2">Scotland, England, France and Wales. Fifteen games are played each year, representing</span>
+<span class="s2">all combinations of the six teams.</span>
+
+<span class="s2">This example uses and includes results from 2014 - 2017, comprising 60 total</span>
+<span class="s2">games. It models latent parameters for each team&#39;s attack and defense, as well</span>
+<span class="s2">as a parameter for home team advantage.</span>
+
+<span class="s2">See https://docs.pymc.io/notebooks/rugby_analytics.html by Peader Coyle</span>
+<span class="s2">for more details and references.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;regression1d&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;regression1d.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/16254899&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;909e8ffe344e196dad2730b1542881ab5729cb0977dd20ba645a532ffa427278&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A synthetic one dimensional linear regression dataset with latent slope,</span>
+<span class="s2">intercept, and noise (&quot;eps&quot;). One hundred data points, fit with PyMC3.</span>
+
+<span class="s2">True slope and intercept are included as deterministic variables.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;regression10d&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;regression10d.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/16255736&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;c6716ec7e19926ad2a52d6ae4c1d1dd5ddb747e204c0d811757c8e93fcf9f970&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A synthetic multi-dimensional (10 dimensions) linear regression dataset with</span>
+<span class="s2">latent weights (&quot;w&quot;), intercept, and noise (&quot;eps&quot;). Five hundred data points,</span>
+<span class="s2">fit with PyMC3.</span>
+
+<span class="s2">True weights and intercept are included as deterministic variables.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;classification1d&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;classification1d.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/16256678&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;1cf3806e72c14001f6864bb69d89747dcc09dd55bcbca50aba04e9939daee5a0&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A synthetic one dimensional logistic regression dataset with latent slope and</span>
+<span class="s2">intercept, passed into a Bernoulli random variable. One hundred data points,</span>
+<span class="s2">fit with PyMC3.</span>
+
+<span class="s2">True slope and intercept are included as deterministic variables.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;classification10d&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;classification10d.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/16256681&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;16c9a45e1e6e0519d573cafc4d266d761ba347e62b6f6a79030aaa8e2fde1367&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">A synthetic multi dimensional (10 dimensions) logistic regression dataset with</span>
+<span class="s2">latent weights (&quot;w&quot;) and intercept, passed into a Bernoulli random variable.</span>
+<span class="s2">Five hundred data points, fit with PyMC3.</span>
+
+<span class="s2">True weights and intercept are included as deterministic variables.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;glycan_torsion_angles&quot;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;glycan_torsion_angles.nc&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://ndownloader.figshare.com/files/22882652&quot;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s2">&quot;4622621fe7a1d3075c18c4c34af8cc57c59eabbb3501b20c6e2d9c6c4737034c&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Torsion angles phi and psi are critical for determining the three dimensional</span>
+<span class="s2">structure of bio-molecules. Combinations of phi and psi torsion angles that</span>
+<span class="s2">produce clashes between atoms in the bio-molecule result in high energy, unlikely structures.</span>
+
+<span class="s2">This model uses a Von Mises distribution to propose torsion angles for the</span>
+<span class="s2">structure of a glycan molecule (pdb id: 2LIQ), and a Potential to estimate</span>
+<span class="s2">the proposed structure&#39;s energy. Said Potential is bound by Boltzman&#39;s law.</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">get_data_home</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the path of the arviz data dir.</span>
+
+<span class="sd">    This folder is used by some dataset loaders to avoid downloading the</span>
+<span class="sd">    data several times.</span>
+
+<span class="sd">    By default the data dir is set to a folder named &#39;arviz_data&#39; in the</span>
+<span class="sd">    user home folder.</span>
+
+<span class="sd">    Alternatively, it can be set by the &#39;ARVIZ_DATA&#39; environment</span>
+<span class="sd">    variable or programmatically by giving an explicit folder path. The &#39;~&#39;</span>
+<span class="sd">    symbol is expanded to the user home folder.</span>
+
+<span class="sd">    If the folder does not already exist, it is automatically created.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_home : str | None</span>
+<span class="sd">        The path to arviz data dir.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">data_home</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ARVIZ_DATA&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">,</span> <span class="s2">&quot;arviz_data&quot;</span><span class="p">))</span>
+    <span class="n">data_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">data_home</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data_home</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_home</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data_home</span>
+
+
+<span class="k">def</span> <span class="nf">clear_data_home</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Delete all the content of the data home cache.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_home : str | None</span>
+<span class="sd">        The path to arviz data dir.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data_home</span> <span class="o">=</span> <span class="n">get_data_home</span><span class="p">(</span><span class="n">data_home</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">data_home</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_sha256</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the sha256 hash of the file at path.&quot;&quot;&quot;</span>
+    <span class="n">sha256hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">8192</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">buff</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">buffer</span> <span class="o">=</span> <span class="n">buff</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">buffer</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">sha256hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sha256hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="load_arviz_data"><a class="viewcode-back" href="../../../api/generated/arviz.load_arviz_data.html#arviz.load_arviz_data">[docs]</a><span class="k">def</span> <span class="nf">load_arviz_data</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load a local or remote pre-made dataset.</span>
+
+<span class="sd">    Run with no parameters to get a list of all available models.</span>
+
+<span class="sd">    The directory to save to can also be set with the environment</span>
+<span class="sd">    variable `ARVIZ_HOME`. The checksum of the dataset is checked against a</span>
+<span class="sd">    hardcoded value to watch for data corruption.</span>
+
+<span class="sd">    Run `az.clear_data_home` to clear the data directory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dataset : str</span>
+<span class="sd">        Name of dataset to load.</span>
+
+<span class="sd">    data_home : str, optional</span>
+<span class="sd">        Where to save remote datasets</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    xarray.Dataset</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">LOCAL_DATASETS</span><span class="p">:</span>
+        <span class="n">resource</span> <span class="o">=</span> <span class="n">LOCAL_DATASETS</span><span class="p">[</span><span class="n">dataset</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">from_netcdf</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">REMOTE_DATASETS</span><span class="p">:</span>
+        <span class="n">remote</span> <span class="o">=</span> <span class="n">REMOTE_DATASETS</span><span class="p">[</span><span class="n">dataset</span><span class="p">]</span>
+        <span class="n">home_dir</span> <span class="o">=</span> <span class="n">get_data_home</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">)</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">home_dir</span><span class="p">,</span> <span class="n">remote</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+            <span class="n">http_type</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;data.http_protocol&quot;</span><span class="p">]</span>
+
+            <span class="c1"># Replaces http type. Redundant if http_type is http, useful if http_type is https</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="n">http_type</span><span class="p">)</span>
+            <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+
+        <span class="n">checksum</span> <span class="o">=</span> <span class="n">_sha256</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">remote</span><span class="o">.</span><span class="n">checksum</span> <span class="o">!=</span> <span class="n">checksum</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> has an SHA256 checksum (</span><span class="si">{}</span><span class="s2">) differing from expected (</span><span class="si">{}</span><span class="s2">), &quot;</span>
+                <span class="s2">&quot;file may be corrupted. Run `arviz.clear_data_home()` and try &quot;</span>
+                <span class="s2">&quot;again, or please open an issue.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">checksum</span><span class="p">,</span> <span class="n">remote</span><span class="o">.</span><span class="n">checksum</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">from_netcdf</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">LOCAL_DATASETS</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">REMOTE_DATASETS</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Dataset </span><span class="si">{}</span><span class="s2"> not found! The following are available:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">dataset</span><span class="p">,</span> <span class="n">list_datasets</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="list_datasets"><a class="viewcode-back" href="../../../api/generated/arviz.list_datasets.html#arviz.list_datasets">[docs]</a><span class="k">def</span> <span class="nf">list_datasets</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get a string representation of all available datasets with descriptions.&quot;&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">LOCAL_DATASETS</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">REMOTE_DATASETS</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">LocalFileMetadata</span><span class="p">):</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;local: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">RemoteFileMetadata</span><span class="p">):</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;remote: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">resource</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">location</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

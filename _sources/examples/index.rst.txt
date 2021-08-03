@@ -1,0 +1,943 @@
+
+
+.. raw:: html
+
+    <style type="text/css">
+    .figure {
+        position: relative;
+        float: left;
+        margin: 10px;
+        width: 180px;
+        height: 200px;
+    }
+
+    .figure img {
+        position: absolute;
+        display: inline;
+        left: 0;
+        width: 170px;
+        height: 170px;
+        opacity:1.0;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+
+    .figure:hover img {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+        opacity:1.0;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+
+    span.figure-label {
+        position: absolute;
+        display: inline;
+        left: 0;
+        width: 170px;
+        height: 170px;
+        background: #000;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 100;
+    }
+
+    .figure p {
+        position: absolute;
+        top: 45%;
+        width: 170px;
+        font-size: 110%;
+    }
+
+    .figure:hover span {
+        visibility: visible;
+        opacity: .4;
+    }
+
+    .caption {
+        position: absolute;
+        width: 180px;
+        top: 170px;
+        text-align: center !important;
+    }
+
+    .figure .gallery-figure-title p {
+        position: relative;
+        top: 170px;
+        color: black;
+        visibility: visible;
+        text-align: center !important;
+        line-height: normal;
+    }
+    .figure .gallery-figure-title span {
+        top: 170px;
+        position: relative;
+        visibility: visible;
+    }
+    </style>
+
+.. _example_gallery:
+
+Example gallery
+===============
+
+
+
+.. toctree::
+   :hidden:
+
+   ./plot_autocorr
+
+   ./plot_bpv
+
+   ./plot_bpv_tstat
+
+   ./plot_compare
+
+   ./plot_density
+
+   ./plot_dist
+
+   ./plot_dot
+
+   ./plot_elpd
+
+   ./plot_energy
+
+   ./plot_ess_evolution
+
+   ./plot_ess_local
+
+   ./plot_ess_quantile
+
+   ./plot_forest
+
+   ./plot_forest_ridge
+
+   ./plot_hdi
+
+   ./plot_joint
+
+   ./plot_kde
+
+   ./plot_kde_2d
+
+   ./plot_kde_2d_bis
+
+   ./plot_kde_2d_hdi
+
+   ./plot_kde_quantiles
+
+   ./plot_khat
+
+   ./plot_lm
+
+   ./plot_loo_pit_ecdf
+
+   ./plot_loo_pit_overlay
+
+   ./plot_mcse
+
+   ./plot_mcse_errorbar
+
+   ./plot_pair
+
+   ./plot_pair_hex
+
+   ./plot_pair_kde
+
+   ./plot_pair_kde_hdi
+
+   ./plot_pair_point_estimate
+
+   ./plot_parallel
+
+   ./plot_parallel_minmax
+
+   ./plot_parallel_normal
+
+   ./plot_parallel_rank
+
+   ./plot_posterior
+
+   ./plot_ppc
+
+   ./plot_ppc_cumulative
+
+   ./plot_rank
+
+   ./plot_separation
+
+   ./plot_trace
+
+   ./plot_trace_bars
+
+   ./plot_trace_circ
+
+   ./plot_trace_vlines
+
+   ./plot_violin
+
+   ./styles
+
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_autocorr.html>
+    <img src=../_static/plot_autocorr_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_autocorr</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Autocorrelation Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_bpv.html>
+    <img src=../_static/plot_bpv_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_bpv</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Bayesian p-value Posterior plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_bpv_tstat.html>
+    <img src=../_static/plot_bpv_tstat_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_bpv_tstat</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Bayesian p-value with median T statistic Posterior plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_compare.html>
+    <img src=../_static/plot_compare_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_compare</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Compare Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_density.html>
+    <img src=../_static/plot_density_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_density</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Density Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_dist.html>
+    <img src=../_static/plot_dist_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_dist</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Dist Plot Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_dot.html>
+    <img src=../_static/plot_dot_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_dot</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Plot distribution.</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_elpd.html>
+    <img src=../_static/plot_elpd_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_elpd</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>ELPD Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_energy.html>
+    <img src=../_static/plot_energy_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_energy</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Energy Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_ess_evolution.html>
+    <img src=../_static/plot_ess_evolution_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_ess_evolution</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>ESS Quantile Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_ess_local.html>
+    <img src=../_static/plot_ess_local_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_ess_local</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>ESS Local Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_ess_quantile.html>
+    <img src=../_static/plot_ess_quantile_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_ess_quantile</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>ESS Quantile Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_forest.html>
+    <img src=../_static/plot_forest_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_forest</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Forest Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_forest_ridge.html>
+    <img src=../_static/plot_forest_ridge_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_forest_ridge</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Ridgeplot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_hdi.html>
+    <img src=../_static/plot_hdi_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_hdi</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Plot HDI</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_joint.html>
+    <img src=../_static/plot_joint_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_joint</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Joint Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_kde.html>
+    <img src=../_static/plot_kde_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_kde</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>KDE Plot Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_kde_2d.html>
+    <img src=../_static/plot_kde_2d_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_kde_2d</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>2d KDE (default style)</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_kde_2d_bis.html>
+    <img src=../_static/plot_kde_2d_bis_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_kde_2d_bis</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>2d KDE (custom style)</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_kde_2d_hdi.html>
+    <img src=../_static/plot_kde_2d_hdi_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_kde_2d_hdi</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>2d KDE with HDI Contours</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_kde_quantiles.html>
+    <img src=../_static/plot_kde_quantiles_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_kde_quantiles</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>KDE quantiles Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_khat.html>
+    <img src=../_static/plot_khat_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_khat</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Pareto Shape Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_lm.html>
+    <img src=../_static/plot_lm_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_lm</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Regression Plot.</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_loo_pit_ecdf.html>
+    <img src=../_static/plot_loo_pit_ecdf_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_loo_pit_ecdf</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Plot LOO predictive ECDF compared to ECDF of uniform distribution to assess predictive calibration.</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_loo_pit_overlay.html>
+    <img src=../_static/plot_loo_pit_overlay_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_loo_pit_overlay</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Plot LOO-PIT KDE overlaid on KDEs of uniform samples to assess predictive calibration.</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_mcse.html>
+    <img src=../_static/plot_mcse_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_mcse</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Quantile Monte Carlo Standard Error Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_mcse_errorbar.html>
+    <img src=../_static/plot_mcse_errorbar_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_mcse_errorbar</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Quantile MCSE Errobar Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_pair.html>
+    <img src=../_static/plot_pair_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_pair</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Pair Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_pair_hex.html>
+    <img src=../_static/plot_pair_hex_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_pair_hex</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Hexbin PairPlot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_pair_kde.html>
+    <img src=../_static/plot_pair_kde_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_pair_kde</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>KDE Pair Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_pair_kde_hdi.html>
+    <img src=../_static/plot_pair_kde_hdi_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_pair_kde_hdi</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>KDE Pair Plot with HDI Contours</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_pair_point_estimate.html>
+    <img src=../_static/plot_pair_point_estimate_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_pair_point_estimate</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Point Estimate Pairplot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_parallel.html>
+    <img src=../_static/plot_parallel_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_parallel</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Parallel Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_parallel_minmax.html>
+    <img src=../_static/plot_parallel_minmax_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_parallel_minmax</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>MinMax Parallel Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_parallel_normal.html>
+    <img src=../_static/plot_parallel_normal_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_parallel_normal</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Normal Parallel Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_parallel_rank.html>
+    <img src=../_static/plot_parallel_rank_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_parallel_rank</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Rank Parallel Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_posterior.html>
+    <img src=../_static/plot_posterior_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_posterior</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Posterior Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_ppc.html>
+    <img src=../_static/plot_ppc_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_ppc</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Posterior Predictive Check Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_ppc_cumulative.html>
+    <img src=../_static/plot_ppc_cumulative_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_ppc_cumulative</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Posterior Predictive Check Cumulative Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_rank.html>
+    <img src=../_static/plot_rank_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_rank</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Rank plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_separation.html>
+    <img src=../_static/plot_separation_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_separation</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Separation Plot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_trace.html>
+    <img src=../_static/plot_trace_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_trace</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Traceplot Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_trace_bars.html>
+    <img src=../_static/plot_trace_bars_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_trace_bars</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Traceplot rank_bars Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_trace_circ.html>
+    <img src=../_static/plot_trace_circ_thumb.png>
+    <span class='figure-label'>
+    <p>mpl_plot_trace_circ</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Traceplot circular variables</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_trace_vlines.html>
+    <img src=../_static/plot_trace_vlines_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_trace_vlines</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Traceplot rank_vlines Bokeh</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./plot_violin.html>
+    <img src=../_static/plot_violin_thumb.png>
+    <span class='figure-label'>
+    <p>bokeh_plot_violin</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Violinplot</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div class='figure align-center'>
+    <a href=./styles.html>
+    <img src=../_static/styles_thumb.png>
+    <span class='figure-label'>
+    <p>mpl_styles</p>
+    </span>
+    <span class="gallery-figure-title">
+      <p>Matplotlib styles for ArviZ</p>
+    </span>
+    </a>
+    </div>
+
+
+
+.. raw:: html
+
+    <div style="clear: both"></div>
+

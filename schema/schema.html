@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InferenceData schema specification &#8212; ArviZ dev documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example of InferenceData schema in PyMC3" href="PyMC3_schema_example.html" />
+    <link rel="prev" title="Label guide" href="../user_guide/label_guide.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../user_guide/data_structures.html">
+   Data structures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/label_guide.html">
+     Label guide
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     InferenceData schema specification
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="PyMC3_schema_example.html">
+       PyMC3 example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="PyStan_schema_example.html">
+       PyStan example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user_guide/computation.html">
+   Computation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/Numba.html">
+     Numba -  an overview
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user_guide/sampling_wrappers.html">
+   Sampling wrappers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/pystan2_refitting.html">
+     Refitting PyStan (2.x) models with ArviZ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/pystan_refitting.html">
+     Refitting PyStan (3.0+) models with ArviZ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/pymc3_refitting.html">
+     Refitting PyMC3 models with ArviZ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/numpyro_refitting.html">
+     Refitting NumPyro models with ArviZ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/pystan2_refitting_xr_lik.html">
+     Refitting PyStan (2.x) models with ArviZ (and xarray)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/pymc3_refitting_xr_lik.html">
+     Refitting PyMC3 models with ArviZ (and xarray)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/numpyro_refitting_xr_lik.html">
+     Refitting NumPyro models with ArviZ (and xarray)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#current-design">
+   Current design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posterior">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       posterior
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-stats">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_stats
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-likelihood">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       log_likelihood
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posterior-predictive">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       posterior_predictive
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observed-data">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       observed_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constant-data">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       constant_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prior">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       prior
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-stats-prior">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sample_stats_prior
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prior-predictive">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       prior_predictive
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictions">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       predictions
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictions-constant-data">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       predictions_constant_data
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planned-features">
+   Planned features
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampler-parameters">
+     Sampler parameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="inferencedata-schema-specification">
+<span id="schema"></span><h1>InferenceData schema specification<a class="headerlink" href="#inferencedata-schema-specification" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> schema scheme defines a data structure compatible with <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> having 3 goals in mind: usefulness in the analysis of Bayesian inference results, reproducibility of Bayesian inference analysis and interoperability between different inference backends and programming languages.</p>
+<p>Currently there are 2 beta implementations of this design:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arviz-devs.github.io/arviz/">ArviZ</a> in Python which integrates with:</p>
+<ul>
+<li><p><a class="reference external" href="https://emcee.readthedocs.io/en/stable/">emcee</a></p></li>
+<li><p><a class="reference external" href="https://docs.pymc.io">PyMC3</a></p></li>
+<li><p><a class="reference external" href="https://pyro.ai/">Pyro</a> and <a class="reference external" href="https://pyro.ai/numpyro/">NumPyro</a></p></li>
+<li><p><a class="reference external" href="https://pystan.readthedocs.io/en/latest/index.html">PyStan</a>, <a class="reference external" href="https://mc-stan.org/users/interfaces/cmdstan">CmdStan</a> and <a class="reference external" href="https://cmdstanpy.readthedocs.io/en/latest/index.html">CmdStanPy</a></p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/probability">TensorFlow Probability</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/arviz-devs/ArviZ.jl">ArviZ.jl</a> in Julia which integrates with:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/StanJulia/CmdStan.jl">CmdStan.jl</a>, <a class="reference external" href="https://github.com/StanJulia/StanSample.jl">StanSample.jl</a> and <a class="reference external" href="https://github.com/StanJulia/Stan.jl">Stan.jl</a></p></li>
+<li><p><a class="reference external" href="https://turing.ml/dev/">Turing.jl</a> and indirectly any package using <a class="reference external" href="https://github.com/TuringLang/MCMCChains.jl">MCMCChains.jl</a> to store results</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<p>The terminology used in this specification is based on <a class="reference external" href="http://xarray.pydata.org/en/stable/terminology.html">xarray’s terminology</a>, however, no xarray knowledge is assumed in this description. There are also some extensions particular to  the InferenceData case.</p>
+<ul class="simple">
+<li><p><strong>Variable</strong>: NetCDF-like variables are multidimensional labeled arrays representing a single quantity. Variables and their dimensions must be named. They can also have attributes describing it. Relevant terms related to InferenceData variables are: <em>variable_name</em>, <em>values</em> (its data), <em>dimensions</em>, <em>coordinates</em>, and <em>attributes</em>.</p></li>
+<li><p><strong>Dimension</strong>: The dimensions of an object are its named axes. A variable containing 3D data can have dimensions <code class="docutils literal notranslate"><span class="pre">[chain,</span> <span class="pre">draw,</span> <span class="pre">dim0]</span></code>, thus, its <code class="docutils literal notranslate"><span class="pre">0th</span></code>-dimension is <code class="docutils literal notranslate"><span class="pre">chain</span></code>, its <code class="docutils literal notranslate"><span class="pre">1st</span></code>-dimension is <code class="docutils literal notranslate"><span class="pre">draw</span></code> and so on. Every dimension present in an InferenceData variable must share names with a <em>coordinate</em>. Given that dimensions must be named, dimension and dimension name are used equivalents.</p></li>
+<li><p><strong>Coordinate</strong>: A named array that labels a dimension. A coordinate named <code class="docutils literal notranslate"><span class="pre">chain</span></code> with values <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> would label the <code class="docutils literal notranslate"><span class="pre">chain</span></code> dimension. Coordinate names and values can be loosely though of as labels and tick labels along a dimension.</p></li>
+<li><p><strong>Attributes</strong>: An ordered dictionary that can store arbitrary metadata.</p></li>
+<li><p><strong>Group</strong>: Dataset containing one or several variables with a conceptual link between them. Variables inside a group will generally share some dimensions too. For example, the <code class="docutils literal notranslate"><span class="pre">posterior</span></code> group contains a representation of the posterior distribution conditioned on the observations in the <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> group.</p></li>
+<li><p><strong>Matching samples</strong>: Two variables (or groups) whose samples match are those that have been generated with the same set of samples. Therefore, they will share dimensions and coordinates corresponding to sampling process. Sample dimensions (generally <code class="docutils literal notranslate"><span class="pre">(chain,</span> <span class="pre">draw)</span></code>) are the ones introduced by the sampling process.</p></li>
+<li><p><strong>Matching variables</strong>: Two groups with matching variables are groups that conceptually share variables, variable dimensions and coordinates of the variable dimensions but do not necessarily share variable names nor sample dimensions. Variable dimensions are the ones intrinsic to the data and model as opposed to sample dimensions which are the ones relative to the sampling process. When talking about specific variables, this same idea is expressed as one variable being the counterpart of the other.</p></li>
+</ul>
+</div>
+<div class="section" id="current-design">
+<h2>Current design<a class="headerlink" href="#current-design" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> stores all quantities relevant to fulfilling its goals in different groups. Different groups generally distinguish conceptually different quantities in Bayesian inference, however, convenience in creation and usage of InferenceData objects also plays a role. In general, each quantity (such as posterior distribution or observed data) will be represented by several multidimensional labeled variables.</p>
+<p>Each group should have one entry per variable and each variable should be named. When relevant, the first two dimensions of each variable should be the sample identifier (<code class="docutils literal notranslate"><span class="pre">chain</span></code>, <code class="docutils literal notranslate"><span class="pre">draw</span></code>). For groups like <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> or <code class="docutils literal notranslate"><span class="pre">constant_data</span></code> these two initial dimensions are omitted. Dimensions must be named and share name with a coordinate specifying the index values, called coordinate values. Coordinate values can be repeated and should not necessarily be numerical values. Variables must not share names with dimensions.</p>
+<p>Moreover, each group contains the following attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: the date of creation of the group.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inference_library</span></code>: the library used to run the inference.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inference_library_version</span></code>: version of the inference library used.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> data objects contain any combination the groups described below. There are some relations (detailed below) between the variables and dimensions of different groups. Hence, whenever related groups are present they should comply with this relations.</p>
+<div class="section" id="posterior">
+<h3><code class="docutils literal notranslate"><span class="pre">posterior</span></code><a class="headerlink" href="#posterior" title="Permalink to this headline">¶</a></h3>
+<p>Samples from the posterior distribution p(theta|y).</p>
+</div>
+<div class="section" id="sample-stats">
+<h3><code class="docutils literal notranslate"><span class="pre">sample_stats</span></code><a class="headerlink" href="#sample-stats" title="Permalink to this headline">¶</a></h3>
+<p>Information and diagnostics for each <code class="docutils literal notranslate"><span class="pre">posterior</span></code> sample, provided by the inference
+backend. It may vary depending on the algorithm used by the backend (i.e. an affine
+invariant sampler has no energy associated). Therefore none of these parameters
+should be assumed to be present in the <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code> group. The convention
+below serves to ensure that <em>if</em> a variable is present with one of these names
+it will correspond to the definition included here.</p>
+<p>The name convention used for <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code> variables is the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lp</span></code>: The joint log posterior density for the model (up to an additive constant).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acceptance_rate</span></code>: The average acceptance probabilities of all possible samples in the proposed tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size</span></code>: The current integration step size.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size_nom</span></code>: The nominal integration step size. The <code class="docutils literal notranslate"><span class="pre">step_size</span></code> may differ from this, for example if the step size is jittered. Should only be present if <code class="docutils literal notranslate"><span class="pre">step_size</span></code> is also present and it varies between samples (i.e. step size is jittered).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree_depth</span></code>: The number of tree doublings in the balanced binary tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_steps</span></code>: The number of leapfrog steps computed. It is related to <code class="docutils literal notranslate"><span class="pre">tree_depth</span></code> with <code class="docutils literal notranslate"><span class="pre">n_steps</span> <span class="pre">&lt;=</span> <span class="pre">2^tree_dept</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diverging</span></code>: (boolean) Indicates the presence of leapfrog transitions with large energy deviation
+from starting and subsequent termination of the trajectory. “large” is defined as <code class="docutils literal notranslate"><span class="pre">max_energy_error</span></code> going over a threshold.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy</span></code>: The value of the Hamiltonian energy for the accepted proposal (up to an
+additive constant).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_error</span></code>: The difference in the Hamiltonian energy between the initial point and
+the accepted proposal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_energy_error</span></code>: The maximum absolute difference in Hamiltonian energy between the initial point and all possible samples in the proposed tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int_time</span></code>: The total integration time (static HMC sampler)</p></li>
+</ul>
+</div>
+<div class="section" id="log-likelihood">
+<h3><code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code><a class="headerlink" href="#log-likelihood" title="Permalink to this headline">¶</a></h3>
+<p>Pointwise log likelihood data. Samples should match with <code class="docutils literal notranslate"><span class="pre">posterior</span></code> ones and its variables
+should match <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> variables. The <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> counterpart variable
+may have a different name. Moreover, some cases such as a multivariate normal
+may require some dimensions or coordinates to be different.</p>
+</div>
+<div class="section" id="posterior-predictive">
+<h3><code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code><a class="headerlink" href="#posterior-predictive" title="Permalink to this headline">¶</a></h3>
+<p>Posterior predictive samples p(y|y) corresponding to the posterior predictive distribution evaluated at the <code class="docutils literal notranslate"><span class="pre">observed_data</span></code>. Samples should match with <code class="docutils literal notranslate"><span class="pre">posterior</span></code> ones and its variables should match <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> variables. The <code class="docutils literal notranslate"><span class="pre">observed_data</span></code> counterpart variable may have a different name.</p>
+</div>
+<div class="section" id="observed-data">
+<h3><code class="docutils literal notranslate"><span class="pre">observed_data</span></code><a class="headerlink" href="#observed-data" title="Permalink to this headline">¶</a></h3>
+<p>Observed data on which the <code class="docutils literal notranslate"><span class="pre">posterior</span></code> is conditional. It should only contain data which is modeled as a random variable. Each variable should have a counterpart in <code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code>, however, the <code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code> counterpart variable may have a different name.</p>
+</div>
+<div class="section" id="constant-data">
+<h3><code class="docutils literal notranslate"><span class="pre">constant_data</span></code><a class="headerlink" href="#constant-data" title="Permalink to this headline">¶</a></h3>
+<p>Model constants, data included in the model which is not modeled as a random variable. It should be the data used to generate samples in all the groups except the <code class="docutils literal notranslate"><span class="pre">predictions</span></code> groups.</p>
+</div>
+<div class="section" id="prior">
+<h3><code class="docutils literal notranslate"><span class="pre">prior</span></code><a class="headerlink" href="#prior" title="Permalink to this headline">¶</a></h3>
+<p>Samples from the prior distribution p(theta). Samples need not match <code class="docutils literal notranslate"><span class="pre">posterior</span></code> samples. However, this group will still follow the convention on <code class="docutils literal notranslate"><span class="pre">chain</span></code> and <code class="docutils literal notranslate"><span class="pre">draw</span></code> as first dimensions. It should have matching variables with the <code class="docutils literal notranslate"><span class="pre">posterior</span></code> group.</p>
+</div>
+<div class="section" id="sample-stats-prior">
+<h3><code class="docutils literal notranslate"><span class="pre">sample_stats_prior</span></code><a class="headerlink" href="#sample-stats-prior" title="Permalink to this headline">¶</a></h3>
+<p>Information and diagnostics for the samples in the <code class="docutils literal notranslate"><span class="pre">prior</span></code> group, provided by the inference backend. It may vary depending on the algorithm used by the backend. Variable names follow the same convention defined in <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code>.</p>
+</div>
+<div class="section" id="prior-predictive">
+<h3><code class="docutils literal notranslate"><span class="pre">prior_predictive</span></code><a class="headerlink" href="#prior-predictive" title="Permalink to this headline">¶</a></h3>
+<p>Samples from the prior predictive distribution. Samples should match <code class="docutils literal notranslate"><span class="pre">prior</span></code> samples and each variable should have a counterpart in <code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code>/<code class="docutils literal notranslate"><span class="pre">observed_data</span></code>.</p>
+</div>
+<div class="section" id="predictions">
+<h3><code class="docutils literal notranslate"><span class="pre">predictions</span></code><a class="headerlink" href="#predictions" title="Permalink to this headline">¶</a></h3>
+<p>Out of sample posterior predictive samples p(y’|y). Samples should match <code class="docutils literal notranslate"><span class="pre">posterior</span></code> samples. Its variables should have a counterpart in <code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code>. However, variables in <code class="docutils literal notranslate"><span class="pre">predictions</span></code> and their counterpart in <code class="docutils literal notranslate"><span class="pre">posterior_predictive</span></code> can have different coordinate values.</p>
+</div>
+<div class="section" id="predictions-constant-data">
+<h3><code class="docutils literal notranslate"><span class="pre">predictions_constant_data</span></code><a class="headerlink" href="#predictions-constant-data" title="Permalink to this headline">¶</a></h3>
+<p>Model constants used to get the <code class="docutils literal notranslate"><span class="pre">predictions</span></code> samples. Its variables should have a counterpart in <code class="docutils literal notranslate"><span class="pre">constant_data</span></code>. However, variables in <code class="docutils literal notranslate"><span class="pre">predictions_constant_data</span></code> and their counterpart in <code class="docutils literal notranslate"><span class="pre">constant_data</span></code> can have different coordinate values.</p>
+</div>
+</div>
+<div class="section" id="planned-features">
+<h2>Planned features<a class="headerlink" href="#planned-features" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> structure is still evolving, with some feature being currently developed. This section aims to describe the roadmap of the specification.</p>
+<div class="section" id="sampler-parameters">
+<h3>Sampler parameters<a class="headerlink" href="#sampler-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Parameters of the sampling algorithm and sampling backend to be used for analysis reproducibility.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In order to clarify the definitions above, an example of <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> generation for a 1D linear regression is available in several programming languages and probabilistic programming frameworks. This particular inference task has been chosen because it is widely well known while still being useful and it also allows to populate all the fields in the <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> object.</p>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PyMC3_schema_example.html">PyMC3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyStan_schema_example.html">PyStan example</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../user_guide/label_guide.html" title="previous page">Label guide</a>
+    <a class='right-next' id="next-link" href="PyMC3_schema_example.html" title="next page">Example of <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> schema in PyMC3</a>
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+import arviz as az
+idata = az.load_arviz_data('classification10d')
+az.plot_separation(idata=idata, y='outcome', y_hat='outcome', figsize=(8, 1))

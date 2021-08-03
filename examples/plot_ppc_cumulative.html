@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posterior Predictive Check Cumulative Plot &#8212; ArviZ dev documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Rank plot" href="plot_rank.html" />
+    <link rel="prev" title="Posterior Predictive Check Plot" href="plot_ppc.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_autocorr.html">
+   Autocorrelation Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_bpv.html">
+   Bayesian p-value Posterior plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_bpv_tstat.html">
+   Bayesian p-value with median T statistic Posterior plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_compare.html">
+   Compare Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_density.html">
+   Density Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_dist.html">
+   Dist Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_dot.html">
+   Dot Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_elpd.html">
+   ELPD Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_energy.html">
+   Energy Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_ess_evolution.html">
+   ESS Quantile Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_ess_local.html">
+   ESS Local Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_ess_quantile.html">
+   ESS Quantile Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_forest.html">
+   Forest Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_forest_ridge.html">
+   Ridgeplot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_hdi.html">
+   Plot HDI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_joint.html">
+   Joint Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_kde.html">
+   KDE Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_kde_2d.html">
+   2d KDE (default style)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_kde_2d_bis.html">
+   2d KDE (custom style)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_kde_2d_hdi.html">
+   2d KDE with HDI Contours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_kde_quantiles.html">
+   KDE quantiles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_khat.html">
+   Pareto Shape Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_loo_pit_ecdf.html">
+   LOO-PIT ECDF Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_loo_pit_overlay.html">
+   LOO-PIT Overlay Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_mcse.html">
+   Quantile Monte Carlo Standard Error Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_mcse_errorbar.html">
+   Quantile MCSE Errobar Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_pair.html">
+   Pair Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_pair_hex.html">
+   Hexbin PairPlot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_pair_kde.html">
+   KDE Pair Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_pair_kde_hdi.html">
+   KDE Pair Plot with HDI Contours
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_pair_point_estimate.html">
+   Point Estimate Pairplot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_parallel.html">
+   Parallel Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_parallel_minmax.html">
+   MinMax Parallel Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_parallel_normal.html">
+   Normal Parallel Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_parallel_rank.html">
+   Rank Parallel Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_posterior.html">
+   Posterior Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_ppc.html">
+   Posterior Predictive Check Plot
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Posterior Predictive Check Cumulative Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_rank.html">
+   Rank plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_separation.html">
+   Separation Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_trace.html">
+   Traceplot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_trace_bars.html">
+   Traceplot rank_bars
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_trace_circ.html">
+   Traceplot circular variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_trace_vlines.html">
+   Traceplot rank_vlines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plot_violin.html">
+   Violin plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="styles.html">
+   Matplotlib styles
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="posterior-predictive-check-cumulative-plot">
+<span id="mpl-plot-ppc-cumulative"></span><h1>Posterior Predictive Check Cumulative Plot<a class="headerlink" href="#posterior-predictive-check-cumulative-plot" title="Permalink to this headline">¶</a></h1>
+<p><strong>API documentation:</strong> <a class="reference internal" href="../api/generated/arviz.plot_ppc.html#arviz.plot_ppc" title="arviz.plot_ppc"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_ppc()</span></code></a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="30493c09-4429-4b3c-acc5-92d3d1e3ecde" name="e0754067-0931-4fc0-a7b7-227ad35d5b87" type="radio">
+</input><label class="tabbed-label" for="30493c09-4429-4b3c-acc5-92d3d1e3ecde">
+Matplotlib</label><div class="tabbed-content docutils">
+<img alt="../_images/mpl_plot_ppc_cumulative.png" src="../_images/mpl_plot_ppc_cumulative.png" />
+<p><strong>Python source code:</strong> <a class="reference download internal" download="" href="../_downloads/7f73b44f8295eb3cd21dadc3cc0507ed/mpl_plot_ppc_cumulative.py"><code class="xref download docutils literal notranslate"><span class="pre">[download</span> <span class="pre">source:</span> <span class="pre">matplotlib/mpl_plot_ppc_cumulative.py]</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
+
+<span class="n">az</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;arviz-darkgrid&quot;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_arviz_data</span><span class="p">(</span><span class="s2">&quot;non_centered_eight&quot;</span><span class="p">)</span>
+<span class="n">az</span><span class="o">.</span><span class="n">plot_ppc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;cumulative&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">textsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="62c6cced-52f2-4ef6-808a-ee1ddb08d2e6" name="e0754067-0931-4fc0-a7b7-227ad35d5b87" type="radio">
+</input><label class="tabbed-label" for="62c6cced-52f2-4ef6-808a-ee1ddb08d2e6">
+Bokeh</label><div class="tabbed-content docutils">
+
+<script src="bokeh-plot-2200f348c6fb49f0821abdfe863e5d2e-external-examples-plot_ppc_cumulative.js" id="da7261c8-106f-411c-82a7-c8119b6aa53a"></script><p><strong>Python source code:</strong> <a class="reference download internal" download="" href="../_downloads/502ea46db7e62bf5cf8bde54ab7a3346/bokeh_plot_ppc_cumulative.py"><code class="xref download docutils literal notranslate"><span class="pre">[download</span> <span class="pre">source:</span> <span class="pre">bokeh/bokeh_plot_ppc_cumulative.py]</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_arviz_data</span><span class="p">(</span><span class="s2">&quot;non_centered_eight&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">plot_ppc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;cumulative&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;bokeh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="plot_ppc.html" title="previous page">Posterior Predictive Check Plot</a>
+    <a class='right-next' id="next-link" href="plot_rank.html" title="next page">Rank plot</a>
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

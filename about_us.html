@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us &#8212; ArviZ dev documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Developer Guide" href="contributing/developer_guide.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-team">
+   Our team
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-arviz">
+   Support ArviZ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#donate">
+     Donate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cite">
+     Cite
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arviz-for-enterprise">
+     ArviZ for enterprise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enterprise-ready-open-source-software-managed-for-you">
+       Enterprise-ready open source software — managed for you
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sponsors">
+   Sponsors
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="about-us">
+<span id="id1"></span><h1>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">¶</a></h1>
+<p>ArviZ is an open source project aiming to provide tools for Exploratory
+Analysis of Bayesian Models that do not depend on the inference library
+used. ArviZ brings together people from several probabilistic programming
+libraries and from multiple programming languages. ArviZ will always be
+free for everyone to use and released under the
+<a class="reference external" href="https://github.com/arviz-devs/arviz/blob/main/LICENSE">Apache License</a>
+(Version 2.0).</p>
+<p>ArviZ is developed in the open on <a class="reference external" href="https://github.com/arviz-devs/arviz">GitHub</a>
+with the input of the whole community and consensus of its core contributors.
+For more information about our governance approach, read our
+<a class="reference external" href="https://github.com/arviz-devs/arviz/blob/main/GOVERNANCE.md">Governance Document</a>.</p>
+<div class="section" id="our-team">
+<h2>Our team<a class="headerlink" href="#our-team" title="Permalink to this headline">¶</a></h2>
+<p>ArviZ is maintained and governed by an international group of core contributors, as defined
+by our governance. You can see our current team in the cards below, as well as
+in <a class="reference external" href="https://github.com/arviz-devs/arviz/blob/main/GOVERNANCE.md#current-core-contributors">our governance doc</a>.</p>
+<p>People interested in joining the project should read
+<a class="reference external" href="https://github.com/arviz-devs/arviz/blob/main/GOVERNANCE.md#core-contributors">this section</a>
+of our governance doc.
+Those interested in contributing should instead refer to our <a class="reference internal" href="contributing/index.html#contributing-guide"><span class="std std-ref">Contributing to ArviZ</span></a>.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/23738400" />
+<div class="card-body docutils">
+<p class="card-text">Oriol Abril-Pla</p>
+<p class="card-text"><a class="reference external" href="https://github.com/oriolabril"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/OriolAbril"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://oriolabril.github.io/oriol_unraveled"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/8028618" />
+<div class="card-body docutils">
+<p class="card-text">Agustina Arroyuelo</p>
+<p class="card-text"><a class="reference external" href="https://github.com/agustinaarroyuelo"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/AgustinaArroyu1"><span class="fab fa-twitter"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/30447180" />
+<div class="card-body docutils">
+<p class="card-text">Alex Andorra</p>
+<p class="card-text"><a class="reference external" href="https://github.com/AlexAndorra"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/alex_andorra"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://www.learnbayesstats.com/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/8673634" />
+<div class="card-body docutils">
+<p class="card-text">Seth Axen</p>
+<p class="card-text"><a class="reference external" href="https://github.com/sethaxen"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/sethaxen"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://sethaxen.com/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/2295568" />
+<div class="card-body docutils">
+<p class="card-text">Colin Carroll</p>
+<p class="card-text"><a class="reference external" href="https://github.com/ColCarroll"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/colindcarroll"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://colindcarroll.com/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/20489158" />
+<div class="card-body docutils">
+<p class="card-text">Piyush Gautam</p>
+<p class="card-text"><a class="reference external" href="https://github.com/percygautam"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/percygautam"><span class="fab fa-twitter"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/3274" />
+<div class="card-body docutils">
+<p class="card-text">Robert P. Goldman</p>
+<p class="card-text"><a class="reference external" href="https://github.com/rpgoldman"><span class="fab fa-github"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/13161958" />
+<div class="card-body docutils">
+<p class="card-text">Ari Hartikainen</p>
+<p class="card-text"><a class="reference external" href="https://github.com/ahartikainen"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/a_hartikainen"><span class="fab fa-twitter"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/7213793" />
+<div class="card-body docutils">
+<p class="card-text">Ravin Kumar</p>
+<p class="card-text"><a class="reference external" href="https://github.com/canyon289"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/canyon289"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="http://ravinkumar.com"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/1338958" />
+<div class="card-body docutils">
+<p class="card-text">Osvaldo Martin</p>
+<p class="card-text"><a class="reference external" href="https://github.com/aloctavodia"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/aloctavodia"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://aloctavodia.github.io/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/5466612" />
+<div class="card-body docutils">
+<p class="card-text">Mitzi Morris</p>
+<p class="card-text"><a class="reference external" href="https://github.com/mitzimorris"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/searchbooster_"><span class="fab fa-twitter"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/4736342" />
+<div class="card-body docutils">
+<p class="card-text">Du Phan</p>
+<p class="card-text"><a class="reference external" href="https://github.com/fehiepsi"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/fehiepsi"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="http://fehiepsi.github.io/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-3 col-md-4 col-sm-4 col-xs-6 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<img alt="img-top" class="card-img-top" src="https://avatars.githubusercontent.com/u/6705400" />
+<div class="card-body docutils">
+<p class="card-text">Aki Vehtari</p>
+<p class="card-text"><a class="reference external" href="https://github.com/avehtari"><span class="fab fa-github"></span></a>
+<a class="reference external" href="https://twitter.com/avehtari"><span class="fab fa-twitter"></span></a>
+<a class="reference external" href="https://users.aalto.fi/~ave/"><span class="fa fa-globe"></span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="support-arviz">
+<h2>Support ArviZ<a class="headerlink" href="#support-arviz" title="Permalink to this headline">¶</a></h2>
+<p>If you have found ArviZ useful in your work, research, or company, consider supporting the
+project in any of the ways described in this section.</p>
+<div class="section" id="donate">
+<h3>Donate<a class="headerlink" href="#donate" title="Permalink to this headline">¶</a></h3>
+<p>If you or your company have the means to do so,
+consider a donation to the project commensurate with your resources.
+Any amount helps! All donations will be used strictly to fund the development
+of ArviZ’s open source software, documentation, and community.</p>
+<p>ArviZ is a Sponsored Project of NumFOCUS, a 501(c)(3) nonprofit charity  in the United States.
+NumFOCUS provides ArviZ with fiscal, legal, and administrative support to
+help ensure the health and sustainability of the project.
+Visit <a class="reference external" href="https://numfocus.org/">numfocus.org</a> for more information.</p>
+<p>Donations to ArviZ are managed by NumFOCUS. For donors in the United States,
+your gift is tax-deductible to the extent provided by law.
+As with any donation, you should consult with your tax advisor about
+your particular tax situation.</p>
+<p>The ArviZ project will make the decisions on how to best use any funds received
+to serve the priorities outlined in our
+<a class="reference external" href="https://github.com/arviz-devs/arviz/wiki/ArviZ-2021-roadmap">Roadmap</a>.</p>
+<div class="sphinx-bs docutils">
+  <div class="row justify-content-md-center docutils">
+    <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+      <div class="card w-100 bg-info shadow docutils">
+        <div class="card-body text-center docutils">
+          <p class="card-text"><a class="sphinx-bs btn text-wrap btn-link text-light stretched-link font-weight-bold reference external" href="https://numfocus.org/donate-to-arviz" title="Donate to ArviZ"><span>Donate</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="section" id="cite">
+<h3>Cite<a class="headerlink" href="#cite" title="Permalink to this headline">¶</a></h3>
+<p>If you use ArviZ in your scientific work, you can cite it using <a class="reference external" href="https://doi.org/10.21105/joss.01143"><img alt="DOI" src="http://joss.theoj.org/papers/10.21105/joss.01143/status.svg" /></a></p>
+<p>Here is the citation in BibTeX format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">arviz_2019</span><span class="p">,</span>
+  <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="mf">.01143</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.21105</span><span class="o">/</span><span class="n">joss</span><span class="mf">.01143</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2019</span><span class="p">},</span>
+  <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">The</span> <span class="n">Open</span> <span class="n">Journal</span><span class="p">},</span>
+  <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">33</span><span class="p">},</span>
+  <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1143</span><span class="p">},</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Ravin</span> <span class="n">Kumar</span> <span class="ow">and</span> <span class="n">Colin</span> <span class="n">Carroll</span> <span class="ow">and</span> <span class="n">Ari</span> <span class="n">Hartikainen</span> <span class="ow">and</span> <span class="n">Osvaldo</span> <span class="n">Martin</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">ArviZ</span> <span class="n">a</span> <span class="n">unified</span> <span class="n">library</span> <span class="k">for</span> <span class="n">exploratory</span> <span class="n">analysis</span> <span class="n">of</span> <span class="n">Bayesian</span> <span class="n">models</span> <span class="ow">in</span> <span class="n">Python</span><span class="p">},</span>
+  <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Journal</span> <span class="n">of</span> <span class="n">Open</span> <span class="n">Source</span> <span class="n">Software</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Please also consider citing ArviZ’s <a class="reference internal" href="getting_started/Installation.html#arviz-dependencies"><span class="std std-ref">Dependencies</span></a> and
+the inference library used to build and fit the model.</p>
+</div>
+<div class="section" id="arviz-for-enterprise">
+<h3>ArviZ for enterprise<a class="headerlink" href="#arviz-for-enterprise" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>ArviZ is now available as part of the Tidelift Subscription!</p>
+</div></blockquote>
+<p>Tidelift is working with ArviZ and the maintainers of thousands of other open source projects
+to deliver commercial support and maintenance for the open source dependencies
+you use to build your applications.
+Save time, reduce risk, and improve code health, while contributing financially to ArviZ.</p>
+<style>.centered {text-align: center;}</style>
+<p><div class="centered">
+<a href="https://tidelift.com/subscription/pkg/pypi-arviz?utm_source=pypi-arviz&utm_medium=referral&utm_campaign=enterprise">
+  <button class="sphinx-bs btn-lg btn btn-warning">Learn more</button>
+</a>
+</div></p><div class="section" id="enterprise-ready-open-source-software-managed-for-you">
+<h4>Enterprise-ready open source software — managed for you<a class="headerlink" href="#enterprise-ready-open-source-software-managed-for-you" title="Permalink to this headline">¶</a></h4>
+<p>The Tidelift Subscription is a managed open source subscription for application
+dependencies covering millions of open source projects across JavaScript, Python, Java,
+PHP, Ruby, .NET, and more. And now, your favorite probabilistic programming language is included in the Tidelift subscription!</p>
+<p>Your subscription includes:</p>
+<ul class="simple">
+<li><p><strong>Security updates</strong>: Tidelift’s security response team coordinates patches for new breaking security vulnerabilities and alerts immediately through a private channel, so your software supply chain is always secure.</p></li>
+<li><p><strong>Licensing verification and indemnification</strong>: Tidelift verifies license information to enable easy policy enforcement and adds intellectual property indemnification to cover creators and users in case something goes wrong. You always have a 100% up-to-date bill of materials for your dependencies to share with your legal team, customers, or partners.</p></li>
+<li><p><strong>Maintenance and code improvement</strong>: Tidelift ensures the software you rely on keeps working as long as you need it to work. Your managed dependencies are actively maintained and Tidelift recruits additional maintainers where required.</p></li>
+<li><p><strong>Package selection and version guidance</strong>: Tidelift helps you choose the best open source packages from the start—and then guides you through updates to stay on the best releases as new issues arise.</p></li>
+<li><p><strong>Roadmap input</strong>: Take a seat at the table with the creators behind the software you use. ArviZ core contributors and other Tidelift’s participating maintainers earn more income as our software is used by more subscribers, so we’re interested in knowing what you need.</p></li>
+<li><p><strong>Tooling and cloud integration</strong>: Tidelift works with GitHub, GitLab, BitBucket, and more. It supports every cloud platform (and other deployment targets, too).</p></li>
+</ul>
+<p>The end result? All of the capabilities you expect from commercial-grade software, for the full breadth of open source you use. That means less time grappling with esoteric open source trivia, and more time building your own applications — and your business.</p>
+<style>.centered {text-align: center;}</style>
+<p><div class="centered">
+<a href="https://tidelift.com/subscription/pkg/pypi-arviz?utm_source=pypi-arviz&utm_medium=referral&utm_campaign=enterprise">
+  <button class="sphinx-bs btn-lg btn btn-warning">Learn more</button>
+</a>
+</div></p></div>
+</div>
+</div>
+<div class="section" id="sponsors">
+<h2>Sponsors<a class="headerlink" href="#sponsors" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://numfocus.org"><img alt="NumFOCUS" src="https://www.numfocus.org/wp-content/uploads/2017/07/NumFocus_LRG.png" /></a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="contributing/developer_guide.html" title="previous page">Developer Guide</a>
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

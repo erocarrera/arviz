@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arviz.wrappers.base &#8212; ArviZ dev documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for arviz.wrappers.base</h1><div class="highlight"><pre>
+<span></span><span class="c1"># pylint: disable=too-many-instance-attributes,too-many-arguments</span>
+<span class="sd">&quot;&quot;&quot;Base class for sampling wrappers.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">xarray</span> <span class="kn">import</span> <span class="n">apply_ufunc</span>
+
+<span class="c1"># from ..data import InferenceData</span>
+<span class="kn">from</span> <span class="nn">..stats</span> <span class="kn">import</span> <span class="n">wrap_xarray_ufunc</span> <span class="k">as</span> <span class="n">_wrap_xarray_ufunc</span>
+
+
+<div class="viewcode-block" id="SamplingWrapper"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.html#arviz.SamplingWrapper">[docs]</a><span class="k">class</span> <span class="nc">SamplingWrapper</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Class wrapping sampling routines for its usage via ArviZ.</span>
+
+<span class="sd">    Using a common class, all inference backends can be supported in ArviZ. Hence, statistical</span>
+<span class="sd">    functions requiring refitting like Leave Future Out or Simulation Based Calibration can be</span>
+<span class="sd">    performed from ArviZ.</span>
+
+<span class="sd">    For usage examples see user guide pages on :ref:`wrapper_guide`.See other</span>
+<span class="sd">    SamplingWrapper classes at :ref:`wrappers api section &lt;wrappers_api&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model</span>
+<span class="sd">        The model object used for sampling.</span>
+<span class="sd">    idata_orig : InferenceData, optional</span>
+<span class="sd">        Original InferenceData object.</span>
+<span class="sd">    log_lik_fun : callable, optional</span>
+<span class="sd">        For simple cases where the pointwise log likelihood is a Python function, this</span>
+<span class="sd">        function will be used to calculate the log likelihood. Otherwise,</span>
+<span class="sd">        ``point_log_likelihood`` method must be implemented. It&#39;s callback must be</span>
+<span class="sd">        ``log_lik_fun(*args, **log_lik_kwargs)`` and will be called using</span>
+<span class="sd">        :func:`wrap_xarray_ufunc` or :func:`xarray:xarray.apply_ufunc` depending</span>
+<span class="sd">        on the value of `is_ufunc`.</span>
+
+<span class="sd">        For more details on ``args`` or ``log_lik_kwargs`` see the notes and</span>
+<span class="sd">        parameters ``posterior_vars`` and ``log_lik_kwargs``.</span>
+<span class="sd">    is_ufunc : bool, default True</span>
+<span class="sd">        If True, call ``log_lik_fun`` using :func:`xarray:xarray.apply_ufunc` otherwise</span>
+<span class="sd">        use :func:`wrap_xarray_ufunc`.</span>
+<span class="sd">    posterior_vars : list of str, optional</span>
+<span class="sd">        List of variable names to unpack as ``args`` for ``log_lik_fun``. Each string in</span>
+<span class="sd">        the list will be used to retrieve a DataArray from the Dataset in the posterior</span>
+<span class="sd">        group and passed to ``log_lik_fun``.</span>
+<span class="sd">    sample_kwargs : dict, optional</span>
+<span class="sd">        Sampling kwargs are stored as class attributes for their usage in the ``sample``</span>
+<span class="sd">        method.</span>
+<span class="sd">    idata_kwargs : dict, optional</span>
+<span class="sd">        kwargs are stored as class attributes to be used in the ``get_inference_data`` method.</span>
+<span class="sd">    log_lik_kwargs : dict, optional</span>
+<span class="sd">        Keyword arguments passed to ``log_lik_fun``.</span>
+<span class="sd">    apply_ufunc_kwargs : dict, optional</span>
+<span class="sd">        Passed to :func:`xarray:xarray.apply_ufunc` or :func:`wrap_xarray_ufunc`.</span>
+
+
+<span class="sd">    Warnings</span>
+<span class="sd">    --------</span>
+<span class="sd">    Sampling wrappers are an experimental feature in a very early stage. Please use them</span>
+<span class="sd">    with caution.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Example of ``log_like_fun`` usage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SamplingWrapper.__init__"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.__init__.html#arviz.SamplingWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="n">idata_orig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_lik_fun</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">is_ufunc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">posterior_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">sample_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">idata_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_lik_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">apply_ufunc_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+        <span class="c1"># if not isinstance(idata_orig, InferenceData) or idata_orig is not None:</span>
+        <span class="c1">#     raise TypeError(&quot;idata_orig must be of InferenceData type or None&quot;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idata_orig</span> <span class="o">=</span> <span class="n">idata_orig</span>
+
+        <span class="k">if</span> <span class="n">log_lik_fun</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">callable</span><span class="p">(</span><span class="n">log_lik_fun</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log_lik_fun</span> <span class="o">=</span> <span class="n">log_lik_fun</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_ufunc</span> <span class="o">=</span> <span class="n">is_ufunc</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior_vars</span> <span class="o">=</span> <span class="n">posterior_vars</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;log_like_fun must be a callable object or None&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sample_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">sample_kwargs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">sample_kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idata_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">idata_kwargs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">idata_kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_lik_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">log_lik_kwargs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">log_lik_kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_ufunc_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">apply_ufunc_kwargs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">apply_ufunc_kwargs</span></div>
+
+<div class="viewcode-block" id="SamplingWrapper.sel_observations"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.sel_observations.html#arviz.SamplingWrapper.sel_observations">[docs]</a>    <span class="k">def</span> <span class="nf">sel_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Select a subset of the observations in idata_orig.</span>
+
+<span class="sd">        **Not implemented**: This method must be implemented by the SamplingWrapper subclasses.</span>
+<span class="sd">        It is documented here to show its format and call signature.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        idx</span>
+<span class="sd">            Indexes to separate from the rest of the observed data.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        modified_observed_data</span>
+<span class="sd">            Observed data whose index is *not* ``idx``</span>
+<span class="sd">        excluded_observed_data</span>
+<span class="sd">            Observed data whose index is ``idx``</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;sel_observations method must be implemented for each subclass&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SamplingWrapper.sample"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.sample.html#arviz.SamplingWrapper.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modified_observed_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sample ``self.model`` on the ``modified_observed_data`` subset.</span>
+
+<span class="sd">        **Not implemented**: This method must be implemented by the SamplingWrapper subclasses.</span>
+<span class="sd">        It is documented here to show its format and call signature.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        modified_observed_data</span>
+<span class="sd">            Data to fit the model on.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fitted_model</span>
+<span class="sd">            Result of the fit.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;sample method must be implemented for each subclass&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SamplingWrapper.get_inference_data"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.get_inference_data.html#arviz.SamplingWrapper.get_inference_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_inference_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fitted_model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert the ``fitted_model`` to an InferenceData object.</span>
+
+<span class="sd">        **Not implemented**: This method must be implemented by the SamplingWrapper subclasses.</span>
+<span class="sd">        It is documented here to show its format and call signature.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fitted_model</span>
+<span class="sd">            Result of the current fit.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        idata_current: InferenceData</span>
+<span class="sd">            InferenceData object containing the samples in ``fitted_model``</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;get_inference_data method must be implemented for each subclass&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SamplingWrapper.log_likelihood__i"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.log_likelihood__i.html#arviz.SamplingWrapper.log_likelihood__i">[docs]</a>    <span class="k">def</span> <span class="nf">log_likelihood__i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">excluded_obs</span><span class="p">,</span> <span class="n">idata__i</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Get the log likelilhood samples :math:`\log p_{post(-i)}(y_i)`.</span>
+
+<span class="sd">        Calculate the log likelihood of the data contained in excluded_obs using the</span>
+<span class="sd">        model fitted with this data excluded, the results of which are stored in ``idata__i``.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        excluded_obs</span>
+<span class="sd">            Observations for which to calculate their log likelihood. The second item from</span>
+<span class="sd">            the tuple returned by `sel_observations` is passed as this argument.</span>
+<span class="sd">        idata__i: InferenceData</span>
+<span class="sd">            Inference results of refitting the data excluding some observations. The</span>
+<span class="sd">            result of `get_inference_data` is used as this argument.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        log_likelihood: xr.Dataarray</span>
+<span class="sd">            Log likelihood of ``excluded_obs`` evaluated at each of the posterior samples</span>
+<span class="sd">            stored in ``idata__i``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_lik_fun</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s2">&quot;When `log_like_fun` is not set during class initialization &quot;</span>
+                <span class="s2">&quot;log_likelihood__i method must be overwritten&quot;</span>
+            <span class="p">)</span>
+        <span class="n">posterior</span> <span class="o">=</span> <span class="n">idata__i</span><span class="o">.</span><span class="n">posterior</span>
+        <span class="n">arys</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">excluded_obs</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="n">posterior</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_vars</span><span class="p">])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_ufunc</span><span class="p">:</span>
+            <span class="n">ufunc_applier</span> <span class="o">=</span> <span class="n">apply_ufunc</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ufunc_applier</span> <span class="o">=</span> <span class="n">_wrap_xarray_ufunc</span>
+        <span class="n">log_lik_idx</span> <span class="o">=</span> <span class="n">ufunc_applier</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log_lik_fun</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">arys</span><span class="p">,</span>
+            <span class="n">kwargs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log_lik_kwargs</span><span class="p">,</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">apply_ufunc_kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">log_lik_idx</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_method_is_implemented</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check a given method is implemented.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">except</span><span class="p">:</span>  <span class="c1"># pylint: disable=bare-except</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="SamplingWrapper.check_implemented_methods"><a class="viewcode-back" href="../../../api/generated/arviz.SamplingWrapper.check_implemented_methods.html#arviz.SamplingWrapper.check_implemented_methods">[docs]</a>    <span class="k">def</span> <span class="nf">check_implemented_methods</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">methods</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that all methods listed are implemented.</span>
+
+<span class="sd">        Not all functions that require refitting need to have all the methods implemented in</span>
+<span class="sd">        order to work properly. This function shoulg be used before using the SamplingWrapper and</span>
+<span class="sd">        its subclasses to get informative error messages.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        methods: list</span>
+<span class="sd">            Check all elements in methods are implemented.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            List with all non implemented methods</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">supported_methods_1arg</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;sel_observations&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;get_inference_data&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">supported_methods_2args</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;log_likelihood__i&quot;</span><span class="p">,)</span>
+        <span class="n">supported_methods</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">supported_methods_1arg</span><span class="p">,</span> <span class="o">*</span><span class="n">supported_methods_2args</span><span class="p">]</span>
+        <span class="n">bad_methods</span> <span class="o">=</span> <span class="p">[</span><span class="n">method</span> <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_methods</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bad_methods</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Not all method(s) in </span><span class="si">{}</span><span class="s2"> supported. Supported methods in SamplingWrapper &quot;</span>
+                <span class="s2">&quot;subclasses are:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bad_methods</span><span class="p">,</span> <span class="n">supported_methods</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="n">not_implemented</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">supported_methods_1arg</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_method_is_implemented</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="n">not_implemented</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">supported_methods_2args</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_method_is_implemented</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="n">not_implemented</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">not_implemented</span></div></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

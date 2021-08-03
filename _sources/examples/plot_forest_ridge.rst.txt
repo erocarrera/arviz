@@ -1,0 +1,30 @@
+
+.. _mpl_plot_forest_ridge:
+
+
+Ridgeplot
+=========
+
+
+
+**API documentation:** :func:`~arviz.plot_forest`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_forest_ridge.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_forest_ridge.py]<matplotlib/mpl_plot_forest_ridge.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_forest_ridge.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_forest_ridge.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_forest_ridge.py]<bokeh/bokeh_plot_forest_ridge.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_forest_ridge.py
+        :lines: 7-

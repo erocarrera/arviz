@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arviz.data.io_pymc3_3x &#8212; ArviZ dev documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+    dev
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../examples/index.html">
+  Example Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../community.html">
+  Community
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../contributing/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../about_us.html">
+  About us
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/arviz-devs/arviz" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/arviz_devs" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+  
+    
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+  
+
+
+          
+  
+    
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+  
+
+
+          
+  
+    
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for arviz.data.io_pymc3_3x</h1><div class="highlight"><pre>
+<span></span><span class="c1"># pylint: disable=unused-import</span>
+<span class="sd">&quot;&quot;&quot;PyMC3-specific conversion code (PyMC3&lt;4.0).&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">ModuleType</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">..rcparams</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">CoordSpec</span><span class="p">,</span> <span class="n">DimSpec</span><span class="p">,</span> <span class="n">dict_to_dataset</span><span class="p">,</span> <span class="n">generate_dims_coords</span><span class="p">,</span> <span class="n">make_attrs</span><span class="p">,</span> <span class="n">requires</span>
+<span class="kn">from</span> <span class="nn">.inference_data</span> <span class="kn">import</span> <span class="n">InferenceData</span><span class="p">,</span> <span class="n">concat</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Set</span>  <span class="c1"># pylint: disable=ungrouped-imports</span>
+
+    <span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">aesara</span>  <span class="c1"># pylint: disable=unused-import</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">theano</span> <span class="k">as</span> <span class="nn">aesara</span>  <span class="c1"># pylint: disable=unused-import</span>
+    <span class="kn">from</span> <span class="nn">pymc3</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">MultiTrace</span>  <span class="c1"># pylint: disable=invalid-name</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">MultiTrace</span> <span class="o">=</span> <span class="n">Any</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="n">Model</span> <span class="o">=</span> <span class="n">Any</span>  <span class="c1"># pylint: disable=invalid-name</span>
+
+<span class="n">___all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+
+<span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">Coords</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+<span class="n">Dims</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+<span class="c1"># random variable object ...</span>
+<span class="n">Var</span> <span class="o">=</span> <span class="n">Any</span>  <span class="c1"># pylint: disable=invalid-name</span>
+
+
+<span class="k">def</span> <span class="nf">_monkey_patch_pymc3</span><span class="p">(</span><span class="n">pm</span><span class="p">:</span> <span class="n">ModuleType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
+    <span class="k">assert</span> <span class="n">pm</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;pymc3&quot;</span>
+
+    <span class="k">def</span> <span class="nf">fixed_eq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Use object identity for MultiObservedRV equality.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="n">other</span>
+
+    <span class="k">if</span> <span class="nb">tuple</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pm</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
+        <span class="n">pm</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">MultiObservedRV</span><span class="o">.</span><span class="fm">__eq__</span> <span class="o">=</span> <span class="n">fixed_eq</span>  <span class="c1"># type: ignore</span>
+
+
+<span class="k">class</span> <span class="nc">PyMC3Converter</span><span class="p">:</span>  <span class="c1"># pylint: disable=too-many-instance-attributes</span>
+    <span class="sd">&quot;&quot;&quot;Encapsulate PyMC3 specific logic.&quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[pm.Model]</span>
+    <span class="n">nchains</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: int</span>
+    <span class="n">ndraws</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: int</span>
+    <span class="n">posterior_predictive</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Type: Optional[Dict[str, np.ndarray]]</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Type: Optional[Dict[str, np.ndarray]]</span>
+    <span class="n">prior</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Type: Optional[Dict[str, np.ndarray]]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">trace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">prior</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">posterior_predictive</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_likelihood</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predictions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">coords</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Coords</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dims</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dims</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_warmup</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">density_dist_obs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">pymc3</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">aesara</span>  <span class="c1"># pylint: disable=redefined-outer-name</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">theano</span> <span class="k">as</span> <span class="nn">aesara</span>
+
+        <span class="n">_monkey_patch_pymc3</span><span class="p">(</span><span class="n">pymc3</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span> <span class="o">=</span> <span class="n">pymc3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aesara</span> <span class="o">=</span> <span class="n">aesara</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;data.save_warmup&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">save_warmup</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">save_warmup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="o">=</span> <span class="n">trace</span>
+
+        <span class="c1"># this permits us to get the model from command-line argument or from with model:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="o">.</span><span class="n">modelcontext</span><span class="p">(</span><span class="n">model</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">_log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Got error </span><span class="si">%s</span><span class="s2"> trying to find log_likelihood in translation.&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Using `from_pymc3` without the model will be deprecated in a future release. &quot;</span>
+                <span class="s2">&quot;Not using the model will return less accurate and less useful results. &quot;</span>
+                <span class="s2">&quot;Make sure you use the model argument or call from_pymc3 within a model context.&quot;</span><span class="p">,</span>
+                <span class="ne">FutureWarning</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># This next line is brittle and may not work forever, but is a secret</span>
+        <span class="c1"># way to access the model from the trace.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">trace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">,</span> <span class="n">InferenceData</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Using the `InferenceData` as a `trace` argument won&#39;t work. &quot;</span>
+                    <span class="s2">&quot;Please use the `arviz.InferenceData.extend` method to extend the &quot;</span>
+                    <span class="s2">&quot;`InferenceData` with groups from another `InferenceData`.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="o">.</span><span class="n">_straces</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span>  <span class="c1"># pylint: disable=protected-access</span>
+                    <span class="mi">0</span>
+                <span class="p">]</span><span class="o">.</span><span class="n">model</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nchains</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">nchains</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="s2">&quot;nchains&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;n_draws&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">trace</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">n_draws</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">n_draws</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;sampling_time&quot;</span><span class="p">:</span> <span class="n">trace</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">t_sampling</span><span class="p">,</span>
+                    <span class="s2">&quot;tuning_steps&quot;</span><span class="p">:</span> <span class="n">trace</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">n_tune</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">:</span>
+                    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;Warmup samples will be stored in posterior group and will not be&quot;</span>
+                        <span class="s2">&quot; excluded from stats and diagnostics.&quot;</span>
+                        <span class="s2">&quot; Please consider using PyMC3&gt;=3.9 and do not slice the trace manually.&quot;</span><span class="p">,</span>
+                        <span class="ne">UserWarning</span><span class="p">,</span>
+                    <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ntune</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_trace</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nchains</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">prior</span> <span class="o">=</span> <span class="n">prior</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">posterior_predictive</span> <span class="o">=</span> <span class="n">posterior_predictive</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;data.log_likelihood&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">log_likelihood</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">log_likelihood</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predictions</span> <span class="o">=</span> <span class="n">predictions</span>
+
+        <span class="k">def</span> <span class="nf">arbitrary_element</span><span class="p">(</span><span class="n">dct</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dct</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+
+        <span class="k">if</span> <span class="n">trace</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># if you have a posterior_predictive built with keep_dims,</span>
+            <span class="c1"># you&#39;ll lose here, but there&#39;s nothing I can do about that.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nchains</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">get_from</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">predictions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">get_from</span> <span class="o">=</span> <span class="n">predictions</span>
+            <span class="k">elif</span> <span class="n">posterior_predictive</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">get_from</span> <span class="o">=</span> <span class="n">posterior_predictive</span>
+            <span class="k">elif</span> <span class="n">prior</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">get_from</span> <span class="o">=</span> <span class="n">prior</span>
+            <span class="k">if</span> <span class="n">get_from</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># pylint: disable=line-too-long</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;When constructing InferenceData must have at least&quot;</span>
+                    <span class="s2">&quot; one of trace, prior, posterior_predictive or predictions.&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">aelem</span> <span class="o">=</span> <span class="n">arbitrary_element</span><span class="p">(</span><span class="n">get_from</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span> <span class="o">=</span> <span class="n">aelem</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">coords</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">coords</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">coords</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;coords&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">dims</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dims</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;RV_dims&quot;</span><span class="p">):</span>
+            <span class="n">model_dims</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">RV_dims</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">model_dims</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">density_dist_obs</span> <span class="o">=</span> <span class="n">density_dist_obs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">multi_observations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_observations</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">find_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Var</span><span class="p">]],</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Var</span><span class="p">]]]:</span>
+        <span class="sd">&quot;&quot;&quot;If there are observations available, return them as a dictionary.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">observations</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">multi_observations</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">observed_RVs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="s2">&quot;observations&quot;</span><span class="p">):</span>
+                <span class="n">observations</span><span class="p">[</span><span class="n">obs</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">observations</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">density_dist_obs</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">obs</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">multi_observations</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">val</span>
+        <span class="k">return</span> <span class="n">observations</span><span class="p">,</span> <span class="n">multi_observations</span>
+
+    <span class="k">def</span> <span class="nf">split_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">MultiTrace</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">MultiTrace</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;Split MultiTrace object into posterior and warmup.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trace_posterior: pymc3.MultiTrace or None</span>
+<span class="sd">            The slice of the trace corresponding to the posterior. If the posterior</span>
+<span class="sd">            trace is empty, None is returned</span>
+<span class="sd">        trace_warmup: pymc3.MultiTrace or None</span>
+<span class="sd">            The slice of the trace corresponding to the warmup. If the warmup trace is</span>
+<span class="sd">            empty or ``save_warmup=False``, None is returned</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">trace_posterior</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">trace_warmup</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntune</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">trace_warmup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ntune</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">trace_posterior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ntune</span> <span class="p">:]</span>
+        <span class="k">return</span> <span class="n">trace_posterior</span><span class="p">,</span> <span class="n">trace_warmup</span>
+
+    <span class="k">def</span> <span class="nf">log_likelihood_vals_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">log_like_fun</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute log likelihood for each observed point.&quot;&quot;&quot;</span>
+        <span class="n">log_like_val</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">one_de</span><span class="p">(</span><span class="n">log_like_fun</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">missing_values</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">observations</span><span class="o">.</span><span class="n">mask</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">log_like_val</span><span class="p">):</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">log_like_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">log_like_val</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">log_like_val</span>
+
+    <span class="k">def</span> <span class="nf">_extract_log_likelihood</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trace</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute log likelihood of each observation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># If we have predictions, then we have a thinned trace which does not</span>
+        <span class="c1"># support extracting a log likelihood.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">cached</span> <span class="o">=</span> <span class="p">[(</span><span class="n">var</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">logp_elemwise</span><span class="p">)</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">observed_RVs</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cached</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">logp_elemwise</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">observed_RVs</span>
+                <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span>
+            <span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">log_likelihood_dict</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="o">.</span><span class="n">sampling</span><span class="o">.</span><span class="n">_DefaultTrace</span><span class="p">(</span>  <span class="c1"># pylint: disable=protected-access</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">chains</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="s2">&quot;Installed version of ArviZ requires PyMC3&gt;=3.8. Please upgrade with &quot;</span>
+                <span class="s2">&quot;`pip install pymc3&gt;=3.8` or `conda install -c conda-forge pymc3&gt;=3.8`.&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+        <span class="k">for</span> <span class="n">var</span><span class="p">,</span> <span class="n">log_like_fun</span> <span class="ow">in</span> <span class="n">cached</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">chain</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">chains</span><span class="p">):</span>
+                    <span class="n">log_like_chain</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_vals_point</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">log_like_fun</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">trace</span><span class="o">.</span><span class="n">points</span><span class="p">([</span><span class="n">chain</span><span class="p">])</span>
+                    <span class="p">]</span>
+                    <span class="n">log_likelihood_dict</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">log_like_chain</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="o">*</span><span class="nb">tuple</span><span class="p">([</span><span class="s2">&quot;While computing log-likelihood for </span><span class="si">{var}</span><span class="s2">: &quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+                <span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+        <span class="k">return</span> <span class="n">log_likelihood_dict</span><span class="o">.</span><span class="n">trace_dict</span>
+
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;trace&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">posterior_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert the posterior to an xarray dataset.&quot;&quot;&quot;</span>
+        <span class="n">var_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_default_varnames</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="o">.</span><span class="n">varnames</span><span class="p">,</span> <span class="n">include_transformed</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">data_warmup</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="p">:</span>
+                <span class="n">data_warmup</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span>
+            <span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span>
+                <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span>
+                <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span>
+                <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                <span class="n">attrs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;trace&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">sample_stats_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Extract sample_stats from PyMC3 trace.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">rename_key</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;model_logp&quot;</span><span class="p">:</span> <span class="s2">&quot;lp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mean_tree_accept&quot;</span><span class="p">:</span> <span class="s2">&quot;acceptance_rate&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;depth&quot;</span><span class="p">:</span> <span class="s2">&quot;tree_depth&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tree_size&quot;</span><span class="p">:</span> <span class="s2">&quot;n_steps&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">data_warmup</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="o">.</span><span class="n">stat_names</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">rename_key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">stat</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;tune&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="p">:</span>
+                <span class="n">data_warmup</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="o">.</span><span class="n">get_sampler_stats</span><span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="o">.</span><span class="n">get_sampler_stats</span><span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span>
+            <span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;trace&quot;</span><span class="p">)</span>
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">log_likelihood_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Extract log likelihood and log_p data from PyMC3 trace.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictions</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">data_warmup</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">warn_msg</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;Could not compute log_likelihood, it will be omitted. &quot;</span>
+            <span class="s2">&quot;Check your model object or set log_likelihood=False&quot;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_log_likelihood</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior_trace</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">warn_msg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data_warmup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_log_likelihood</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">warmup_trace</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">warn_msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">skip_event_dims</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span>
+                <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span>
+                <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span>
+                <span class="n">skip_event_dims</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">translate_posterior_predictive_dict_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dct</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Take Dict of variables to numpy ndarrays (samples) and translate into dataset.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">ary</span> <span class="ow">in</span> <span class="n">dct</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">shape</span>
+            <span class="k">if</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchains</span> <span class="ow">and</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ary</span>
+            <span class="k">elif</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchains</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">nchains</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndraws</span><span class="p">,</span> <span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span>
+                <span class="c1"># pylint: disable=line-too-long</span>
+                <span class="n">_log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">&quot;posterior predictive variable </span><span class="si">%s</span><span class="s2">&#39;s shape not compatible with number of chains and draws. &quot;</span>
+                    <span class="s2">&quot;This can mean that some draws or even whole chains are not represented.&quot;</span><span class="p">,</span>
+                    <span class="n">k</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+    <span class="nd">@requires</span><span class="p">([</span><span class="s2">&quot;posterior_predictive&quot;</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">posterior_predictive_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert posterior_predictive samples to xarray.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">translate_posterior_predictive_dict_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior_predictive</span><span class="p">)</span>
+
+    <span class="nd">@requires</span><span class="p">([</span><span class="s2">&quot;predictions&quot;</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">predictions_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert predictions (out of sample predictions) to xarray.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">translate_posterior_predictive_dict_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predictions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">priors_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert prior samples (and if possible prior predictive too) to xarray.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;prior&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;prior_predictive&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">observations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">prior_predictive_vars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">prior_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prior_predictive_vars</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prior_vars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">prior_predictive_vars</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">priors_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">var_names</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="p">(</span><span class="s2">&quot;prior&quot;</span><span class="p">,</span> <span class="s2">&quot;prior_predictive&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">prior_vars</span><span class="p">,</span> <span class="n">prior_predictive_vars</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">priors_dict</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">var_names</span> <span class="ow">is</span> <span class="kc">None</span>
+                <span class="k">else</span> <span class="n">dict_to_dataset</span><span class="p">(</span>
+                    <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">},</span>
+                    <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">,</span>
+                    <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span>
+                    <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">priors_dict</span>
+
+    <span class="nd">@requires</span><span class="p">([</span><span class="s2">&quot;observations&quot;</span><span class="p">,</span> <span class="s2">&quot;multi_observations&quot;</span><span class="p">])</span>
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">observed_data_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert observed data to xarray.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictions</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+        <span class="n">observed_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">vals</span> <span class="ow">in</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">multi_observations</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="s2">&quot;get_value&quot;</span><span class="p">):</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">one_de</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">val_dims</span> <span class="o">=</span> <span class="n">dims</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">generate_dims_coords</span><span class="p">(</span>
+                <span class="n">vals</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span>
+            <span class="p">)</span>
+            <span class="c1"># filter coords based on the dims</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">IndexVariable</span><span class="p">((</span><span class="n">key</span><span class="p">,),</span> <span class="n">data</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">val_dims</span><span class="p">}</span>
+            <span class="n">observed_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="n">observed_data</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">make_attrs</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">))</span>
+
+    <span class="nd">@requires</span><span class="p">([</span><span class="s2">&quot;trace&quot;</span><span class="p">,</span> <span class="s2">&quot;predictions&quot;</span><span class="p">])</span>
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">constant_data_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert constant data to xarray.&quot;&quot;&quot;</span>
+        <span class="c1"># For constant data, we are concerned only with deterministics and data.</span>
+        <span class="c1"># The constant data vars must be either pm.Data (TensorSharedVariable) or pm.Deterministic</span>
+        <span class="n">constant_data_vars</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># type: Dict[str, Var]</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">deterministics</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aesara</span><span class="p">,</span> <span class="s2">&quot;gof&quot;</span><span class="p">):</span>
+                <span class="n">ancestors_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aesara</span><span class="o">.</span><span class="n">gof</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">ancestors</span>  <span class="c1"># pylint: disable=no-member</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ancestors_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aesara</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">basic</span><span class="o">.</span><span class="n">ancestors</span>  <span class="c1"># pylint: disable=no-member</span>
+            <span class="n">ancestors</span> <span class="o">=</span> <span class="n">ancestors_func</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="c1"># no dependency on a random variable</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">((</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">PyMC3Variable</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ancestors</span><span class="p">)):</span>
+                <span class="n">constant_data_vars</span><span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">var</span>
+
+        <span class="k">def</span> <span class="nf">is_data</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">deterministics</span>
+                <span class="ow">and</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">observed_RVs</span>
+                <span class="ow">and</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">free_RVs</span>
+                <span class="ow">and</span> <span class="n">var</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">potentials</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">observations</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">observations</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># I don&#39;t know how to find pm.Data, except that they are named variables that aren&#39;t</span>
+        <span class="c1"># observed or free RVs, nor are they deterministics, and then we eliminate observations.</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">named_vars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">is_data</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+                <span class="n">constant_data_vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">var</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">constant_data_vars</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+        <span class="n">constant_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">vals</span> <span class="ow">in</span> <span class="n">constant_data_vars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="s2">&quot;get_value&quot;</span><span class="p">):</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+            <span class="c1"># this might be a Deterministic, and must be evaluated</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="s2">&quot;eval&quot;</span><span class="p">):</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">val_dims</span> <span class="o">=</span> <span class="n">dims</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span> <span class="o">=</span> <span class="n">generate_dims_coords</span><span class="p">(</span>
+                <span class="n">vals</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span>
+            <span class="p">)</span>
+            <span class="c1"># filter coords based on the dims</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">IndexVariable</span><span class="p">((</span><span class="n">key</span><span class="p">,),</span> <span class="n">data</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">val_dims</span><span class="p">}</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">constant_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">val_dims</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Error translating constant_data variable </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+                <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+        <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="n">constant_data</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">make_attrs</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pymc3</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">to_inference_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert all available data to an InferenceData object.</span>
+
+<span class="sd">        Note that if groups can not be created (e.g., there is no `trace`, so</span>
+<span class="sd">        the `posterior` and `sample_stats` can not be extracted), then the InferenceData</span>
+<span class="sd">        will not have those groups.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">id_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;posterior&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_to_xarray</span><span class="p">(),</span>
+            <span class="s2">&quot;sample_stats&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_stats_to_xarray</span><span class="p">(),</span>
+            <span class="s2">&quot;log_likelihood&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_to_xarray</span><span class="p">(),</span>
+            <span class="s2">&quot;posterior_predictive&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_predictive_to_xarray</span><span class="p">(),</span>
+            <span class="s2">&quot;predictions&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictions_to_xarray</span><span class="p">(),</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">priors_to_xarray</span><span class="p">(),</span>
+            <span class="s2">&quot;observed_data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">observed_data_to_xarray</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictions</span><span class="p">:</span>
+            <span class="n">id_dict</span><span class="p">[</span><span class="s2">&quot;predictions_constant_data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constant_data_to_xarray</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">id_dict</span><span class="p">[</span><span class="s2">&quot;constant_data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constant_data_to_xarray</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">InferenceData</span><span class="p">(</span><span class="n">save_warmup</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span> <span class="o">**</span><span class="n">id_dict</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="from_pymc3"><a class="viewcode-back" href="../../../api/generated/arviz.from_pymc3.html#arviz.from_pymc3">[docs]</a><span class="k">def</span> <span class="nf">from_pymc3</span><span class="p">(</span>
+    <span class="n">trace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">prior</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">posterior_predictive</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_likelihood</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_warmup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">density_dist_obs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert pymc3 data into an InferenceData object.</span>
+
+<span class="sd">    All three of them are optional arguments, but at least one of ``trace``,</span>
+<span class="sd">    ``prior`` and ``posterior_predictive`` must be present.</span>
+<span class="sd">    For a usage example read the</span>
+<span class="sd">    :ref:`Creating InferenceData section on from_pymc3 &lt;creating_InferenceData&gt;`</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    trace : pymc3.MultiTrace, optional</span>
+<span class="sd">        Trace generated from MCMC sampling. Output of</span>
+<span class="sd">        :py:func:`pymc3:pymc3.sampling.sample`.</span>
+<span class="sd">    prior : dict, optional</span>
+<span class="sd">        Dictionary with the variable names as keys, and values numpy arrays</span>
+<span class="sd">        containing prior and prior predictive samples.</span>
+<span class="sd">    posterior_predictive : dict, optional</span>
+<span class="sd">        Dictionary with the variable names as keys, and values numpy arrays</span>
+<span class="sd">        containing posterior predictive samples.</span>
+<span class="sd">    log_likelihood : bool or array_like of str, optional</span>
+<span class="sd">        List of variables to calculate `log_likelihood`. Defaults to True which calculates</span>
+<span class="sd">        `log_likelihood` for all observed variables. If set to False, log_likelihood is skipped.</span>
+<span class="sd">        Defaults to the value of rcParam ``data.log_likelihood``.</span>
+<span class="sd">    coords : dict of {str: array-like}, optional</span>
+<span class="sd">        Map of coordinate names to coordinate values</span>
+<span class="sd">    dims : dict of {str: list of str}, optional</span>
+<span class="sd">        Map of variable names to the coordinate names to use to index its dimensions.</span>
+<span class="sd">    model : pymc3.Model, optional</span>
+<span class="sd">        Model used to generate ``trace``. It is not necessary to pass ``model`` if in</span>
+<span class="sd">        ``with`` context.</span>
+<span class="sd">    save_warmup : bool, optional</span>
+<span class="sd">        Save warmup iterations InferenceData object. If not defined, use default</span>
+<span class="sd">        defined by the rcParams.</span>
+<span class="sd">    density_dist_obs : bool, default True</span>
+<span class="sd">        Store variables passed with ``observed`` arg to</span>
+<span class="sd">        :class:`pymc3:pymc.distributions.DensityDist` in the generated InferenceData.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    InferenceData</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">PyMC3Converter</span><span class="p">(</span>
+        <span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">,</span>
+        <span class="n">prior</span><span class="o">=</span><span class="n">prior</span><span class="p">,</span>
+        <span class="n">posterior_predictive</span><span class="o">=</span><span class="n">posterior_predictive</span><span class="p">,</span>
+        <span class="n">log_likelihood</span><span class="o">=</span><span class="n">log_likelihood</span><span class="p">,</span>
+        <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+        <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">save_warmup</span><span class="o">=</span><span class="n">save_warmup</span><span class="p">,</span>
+        <span class="n">density_dist_obs</span><span class="o">=</span><span class="n">density_dist_obs</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">to_inference_data</span><span class="p">()</span></div>
+
+
+<span class="c1">### Later I could have this return ``None`` if the ``idata_orig`` argument is supplied.  But</span>
+<span class="c1">### perhaps we should have an inplace argument?</span>
+<div class="viewcode-block" id="from_pymc3_predictions"><a class="viewcode-back" href="../../../api/generated/arviz.from_pymc3_predictions.html#arviz.from_pymc3_predictions">[docs]</a><span class="k">def</span> <span class="nf">from_pymc3_predictions</span><span class="p">(</span>
+    <span class="n">predictions</span><span class="p">,</span>
+    <span class="n">posterior_trace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">idata_orig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Translate out-of-sample predictions into ``InferenceData``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    predictions: Dict[str, np.ndarray]</span>
+<span class="sd">        The predictions are the return value of ``pymc3.sample_posterior_predictive``,</span>
+<span class="sd">        a dictionary of strings (variable names) to numpy ndarrays (draws).</span>
+<span class="sd">    posterior_trace: pm.MultiTrace</span>
+<span class="sd">        This should be a trace that has been thinned appropriately for</span>
+<span class="sd">        ``pymc3.sample_posterior_predictive``. Specifically, any variable whose shape is</span>
+<span class="sd">        a deterministic function of the shape of any predictor (explanatory, independent, etc.)</span>
+<span class="sd">        variables must be *removed* from this trace.</span>
+<span class="sd">    model: pymc3.Model</span>
+<span class="sd">        This argument is *not* optional, unlike in conventional uses of ``from_pymc3``.</span>
+<span class="sd">        The reason is that the posterior_trace argument is likely to supply an incorrect</span>
+<span class="sd">        value of model.</span>
+<span class="sd">    coords: Dict[str, array-like[Any]]</span>
+<span class="sd">        Coordinates for the variables.  Map from coordinate names to coordinate values.</span>
+<span class="sd">    dims: Dict[str, array-like[str]]</span>
+<span class="sd">        Map from variable name to ordered set of coordinate names.</span>
+<span class="sd">    idata_orig: InferenceData, optional</span>
+<span class="sd">        If supplied, then modify this inference data in place, adding ``predictions`` and</span>
+<span class="sd">        (if available) ``predictions_constant_data`` groups. If this is not supplied, make a</span>
+<span class="sd">        fresh InferenceData</span>
+<span class="sd">    inplace: boolean, optional</span>
+<span class="sd">        If idata_orig is supplied and inplace is True, merge the predictions into idata_orig,</span>
+<span class="sd">        rather than returning a fresh InferenceData object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    InferenceData:</span>
+<span class="sd">        May be modified ``idata_orig``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">inplace</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">idata_orig</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="s2">&quot;Do not pass True for inplace unless passing&quot;</span>
+                <span class="s2">&quot;an existing InferenceData as idata_orig&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">new_idata</span> <span class="o">=</span> <span class="n">PyMC3Converter</span><span class="p">(</span>
+        <span class="n">trace</span><span class="o">=</span><span class="n">posterior_trace</span><span class="p">,</span> <span class="n">predictions</span><span class="o">=</span><span class="n">predictions</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">to_inference_data</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">idata_orig</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">new_idata</span>
+    <span class="k">elif</span> <span class="n">inplace</span><span class="p">:</span>
+        <span class="n">concat</span><span class="p">([</span><span class="n">idata_orig</span><span class="p">,</span> <span class="n">new_idata</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">idata_orig</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># if we are not returning in place, then merge the old groups into the new inference</span>
+        <span class="c1"># data and return that.</span>
+        <span class="n">concat</span><span class="p">([</span><span class="n">new_idata</span><span class="p">,</span> <span class="n">idata_orig</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_idata</span></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+  
+
+
+      </div>
+    </div>
+
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W1G68W77YV"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W1G68W77YV');
+                </script>
+
+<script>
+  $(document).ready(function () {
+    const content = $('<div class="alert-info">Help us improve our documentation answering this  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdm98VJvKad6V7V-s6Dg5vk34Dyc17fnFBtAOBcaaQ7In7eUw/viewform">~2min survey</a></div>')
+    $('#banner').append(content);
+  })
+</script><footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2018, ArviZ devs.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

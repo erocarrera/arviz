@@ -1,0 +1,30 @@
+
+.. _mpl_plot_loo_pit_ecdf:
+
+
+LOO-PIT ECDF Plot
+=================
+
+
+
+**API documentation:** :func:`~arviz.plot_loo_pit`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_loo_pit_ecdf.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_loo_pit_ecdf.py]<matplotlib/mpl_plot_loo_pit_ecdf.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_loo_pit_ecdf.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_loo_pit_ecdf.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_loo_pit_ecdf.py]<bokeh/bokeh_plot_loo_pit_ecdf.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_loo_pit_ecdf.py
+        :lines: 8-

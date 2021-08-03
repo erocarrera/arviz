@@ -1,0 +1,30 @@
+
+.. _mpl_plot_violin:
+
+
+Violin plot
+===========
+
+
+
+**API documentation:** :func:`~arviz.plot_violin`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_violin.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_violin.py]<matplotlib/mpl_plot_violin.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_violin.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_violin.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_violin.py]<bokeh/bokeh_plot_violin.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_violin.py
+        :lines: 7-

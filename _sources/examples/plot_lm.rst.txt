@@ -1,0 +1,30 @@
+
+.. _mpl_plot_lm:
+
+
+Regression Plot.
+
+===============================
+
+
+**API documentation:** :func:`~arviz.plot_lm`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_lm.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_lm.py]<matplotlib/mpl_plot_lm.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_lm.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_lm.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_lm.py]<bokeh/bokeh_plot_lm.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_lm.py
+        :lines: 7-

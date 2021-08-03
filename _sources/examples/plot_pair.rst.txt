@@ -1,0 +1,30 @@
+
+.. _mpl_plot_pair:
+
+
+Pair Plot
+=========
+
+
+
+**API documentation:** :func:`~arviz.plot_pair`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_pair.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_pair.py]<matplotlib/mpl_plot_pair.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_pair.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_pair.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_pair.py]<bokeh/bokeh_plot_pair.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_pair.py
+        :lines: 7-

@@ -1,0 +1,30 @@
+
+.. _mpl_plot_compare:
+
+
+Compare Plot
+============
+
+
+
+**API documentation:** :func:`~arviz.plot_compare`
+
+.. tabbed:: Matplotlib
+
+    .. image:: matplotlib/_images/mpl_plot_compare.png
+
+    **Python source code:** :download:`[download source: matplotlib/mpl_plot_compare.py]<matplotlib/mpl_plot_compare.py>`
+
+    .. literalinclude:: matplotlib/mpl_plot_compare.py
+        :lines: 8-
+
+
+.. tabbed:: Bokeh
+
+    .. bokeh-plot:: /home/vsts/work/1/s/doc/source/examples/bokeh/bokeh_plot_compare.py
+        :source-position: none
+
+    **Python source code:** :download:`[download source: bokeh/bokeh_plot_compare.py]<bokeh/bokeh_plot_compare.py>`
+
+    .. literalinclude:: bokeh/bokeh_plot_compare.py
+        :lines: 7-
